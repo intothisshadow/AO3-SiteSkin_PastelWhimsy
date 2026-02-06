@@ -990,6 +990,12 @@ dl.meta dd.rating a.tag:hover:visited {
   padding: .15em .5em;
 }
 
+.work a.tag:hover {
+  background: linear-gradient(135deg,#cbb7ee,#e9b9d8);
+  border-color: #b8a3db;
+  color: #2f234f !important;
+}
+
 /* General hover state for tags within a work blurb */
 .work a.tag:hover {
   background: linear-gradient(135deg,#cbb7ee,#e9b9d8);
