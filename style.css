@@ -982,18 +982,13 @@ dl.meta dd.rating a.tag:hover:visited {
 }
 
 /* Styles for Freeform tags */
-.freeforms .tag,
+.freeform .tag,
+.work .freeform a.tag,.freeforms .tag,
 .work .freeforms a.tag {
   background: linear-gradient(135deg,#b2cff0,#d6e7f7);
   border-color: #98b9dc;
   color: #1f324a !important;
   padding: .15em .5em;
-}
-
-.work a.tag:hover {
-  background: linear-gradient(135deg,#cbb7ee,#e9b9d8);
-  border-color: #b8a3db;
-  color: #2f234f !important;
 }
 
 /* General hover state for tags within a work blurb */
