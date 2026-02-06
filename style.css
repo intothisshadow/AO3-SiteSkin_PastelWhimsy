@@ -1,0 +1,1484 @@
+
+/*============================================================
+
+                           Pastel Whimsy
+
+            a site skin for the Archive of Our Own
+                        by intothisshadow
+
+==============================================================
+LINKS & CREDITS
+==============================================================
+
+CODE & INSTRUCTIONS:
+
+- Code (GitHub):       https://github.com/intothisshadow
+- Instructions (AO3):  
+
+CREDITS:
+
+- "Replace the AO3 Icons 2.0" and some AO3 typography CSS by ZerafinaCSS, (Zerafina) https://github.com/ZerafinaCSS/ | https://archiveofourown.org/users/Zerafina/pseuds/ZerafinaCSS
+
+
+FIND ME ON:
+
+- GitHub:              https://github.com/intothisshadow
+- AO3:                 https://archiveofourown.org/users/intothisshadow/
+- Website:             https://www.so-obsessed.com
+
+/* GENERAL BODY AND FONT STYLES */
+
+body {
+  /* Sets a vertical linear gradient background from a light pink to a light purple */
+  background: linear-gradient(180deg,#fff7fb,#f6f1ff);
+  /* Sets the default text color for the page */
+  color: #3f3747;
+}
+
+/* Sets a consistent sans-serif font family for various elements to ensure a uniform look */
+body,
+input,
+textarea,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+blockquote,
+.prompt .blurb h6,
+.bookmark .user .meta,
+a.work,
+span.symbol,
+.heading .actions,
+.heading .action,
+.heading span.actions,
+button,
+span.unread,
+span.replied,
+span.claimed,
+.actions span.defaulted {
+  font-family: Verdana, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+}
+
+/* Sets a specific font for headings, allows long words to wrap, and sets word break behavior */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: Verdana, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Sets a monospaced font for code-related elements and slightly reduces their font size */
+kbd,
+tt,
+code,
+var,
+pre,
+samp,
+textarea#skin_css,
+.css.module blockquote pre,
+.splash .news .meta,
+.datetime {
+  font-family: Consolas, Monaco, Courier, monospace;
+  font-size: 0.9em;
+}
+
+/* Removes the default underline from links on hover for a cleaner look */
+a:hover {
+  text-decoration: none;
+}
+
+/* USER CONTENT, LINKS, AND METADATA */
+
+/* Styles the user-generated content area with increased line height for readability */
+.userstuff {
+  color: #3a3242;
+  line-height: 1.7;
+}
+
+/* Styles links within user content, summaries, and notes with a custom underline */
+.userstuff a,
+.summary a,
+.notes a {
+  color: #6a5aa8;
+  text-decoration: underline;
+  text-decoration-color: #d9cdee;
+  text-underline-offset: 2px;
+}
+
+/* Sets a consistent color for links in metadata sections */
+.meta a,
+.stats a,
+.byline a,
+.datetime a {
+  color: #5f5670;
+}
+
+/* Sets the text color for summary and notes sections */
+.summary,
+.notes {
+  color: #3a3242;
+}
+
+/* Styles various metadata elements with a slightly smaller font size and specific color */
+.meta,
+.stats,
+.datetime,
+.byline {
+  color: #5f5670;
+  font-size: .95em;
+}
+
+/* HEADER STYLES */
+
+/* Styles the main site title in the header */
+#header h1 a {
+  color: #d77fb3;
+  font-weight: 700;
+}
+
+/* Sets the color for the primary navigation links in the header */
+#header ul.primary li a {
+  color: #3f3747;
+}
+
+/* Changes the color of primary navigation links on hover */
+#header ul.primary li a:hover {
+  color: #5e3f8c;
+}
+
+/* CONTENT CONTAINERS (WORKS, COMMENTS) */
+
+/* Styles work and comment containers with a gradient background, rounded corners, and padding */
+.work,
+.comment {
+  background: linear-gradient(160deg,#f3ecff,#fff);
+  border-radius: 12px;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+/* TAGS AND RATINGS */
+
+/* Styles tags with a gradient background, border, and rounded shape */
+.tags a {
+  background: linear-gradient(135deg,#efe8fb,#fdeaf3);
+  border: 1px solid #e1d7f2;
+  border-radius: 999px;
+  color: #5a4a78;
+  font-weight: 500;
+  padding: 2px 8px;
+}
+
+/* Sets the color for rating tags */
+.rating,
+.required-tags .rating {
+  color: #4a3f7a;
+}
+
+/* FORMS AND FILTERS */
+
+/* Styles the search form and filter sections with a gradient background and rounded corners */
+form.search,
+.filters {
+  background: linear-gradient(180deg,#e9f7f2,#fff);
+  border: 1px solid #e1d7f2;
+  border-radius: 12px;
+}
+
+/* Styles input fields, select boxes, and textareas */
+input,
+select,
+textarea {
+  background: #fff;
+  border-color: #d8cfee;
+  color: #3f354f;
+}
+
+/* Sets the color for placeholder text in input fields */
+input::placeholder,
+textarea::placeholder {
+  color: #8a7f99;
+}
+
+/* HEADING SIZES */
+
+h1 {
+  font-size: 1.6em;
+}
+
+h2 {
+  font-size: 1.35em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+/* METADATA DL LIST */
+
+/* Styles the definition list used for work metadata with a gradient background and dashed border */
+dl.meta {
+  background: linear-gradient(180deg,#f4effa,#fff);
+  border: 1px dashed #d9cfee;
+  border-radius: 10px;
+  font-size: 1.02em;
+  padding: .6em .8em;
+}
+
+/* Styles the term (dt) in the metadata list */
+dl.meta dt {
+  color: #6a5a86;
+  font-weight: 600;
+}
+
+/* Styles the description (dd) in the metadata list */
+dl.meta dd {
+  color: #5f5670;
+}
+
+/* LAYOUT FOR FILTERED PAGES */
+
+/* Sets the width for the main content area when filters are displayed */
+.filtered .index {
+  float: left;
+  width: 74%;
+}
+
+/* Sets the width for the sidebar on filtered pages */
+.filtered #sidebar {
+  float: right;
+  width: 24%;
+}
+
+/* Clears the float to ensure proper layout */
+.filtered:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* FOOTER STYLES */
+
+/* Sets the text color for the footer and its children, overriding other styles */
+#footer,
+#footer * {
+  color: #5a4a78 !important;
+}
+
+/* Styles the footer with a gradient background and top border */
+#footer {
+  background: linear-gradient(180deg,#ede6f7,#fff7fb);
+  border-top: 1px solid #e1d7f2;
+}
+
+/* Changes footer link color on hover */
+#footer a:hover {
+  color: #7b5fa3 !important;
+}
+
+/* Styles the menu within the footer */
+#footer .menu {
+  background: linear-gradient(180deg,#f6f1ff,#fff7fb);
+  border: 1px solid #dccfee;
+  border-radius: 12px;
+  padding: .75em 1em;
+}
+
+/* Styles the heading within the footer menu */
+#footer .menu .heading {
+  color: #4b3f5c;
+  font-weight: 600;
+  margin-bottom: .4em;
+}
+
+/* SIDEBAR STYLES */
+
+/* Styles the sidebar with a gradient background, border, and rounded corners */
+#sidebar {
+  background: linear-gradient(180deg,#f3ecff,#fff);
+  border: 1px solid #e1d7f2;
+  border-radius: 12px;
+  padding: 1em;
+}
+
+/* Styles headings within the sidebar */
+#sidebar h2,
+#sidebar h3 {
+  color: #4a3f5c;
+}
+
+/* Styles links within the sidebar */
+#sidebar a {
+  color: #7b5fa3;
+}
+
+/* Changes sidebar link color on hover */
+#sidebar a:hover {
+  color: #5e3f8c;
+}
+
+/* WORK FILTERS SIDEBAR MODULE */
+
+/* Ensures the work filters are always visible */
+#work-filters {
+  display: block;
+}
+
+/* Styles the fieldsets within the work filters */
+#work-filters fieldset {
+  background: linear-gradient(180deg,#f6f1ff,#fff);
+  border: 1px solid #e1d7f2;
+  border-radius: 12px;
+  margin-bottom: 1em;
+  padding: .8em;
+}
+
+/* Styles the legend (title) of the fieldsets */
+#work-filters legend {
+  color: #4a3f5c;
+  font-weight: 600;
+}
+
+/* Styles the labels for filter options */
+#work-filters label {
+  color: #3f3747;
+}
+
+/* Makes input and select fields in work filters take up the full width */
+#work-filters input,
+#work-filters select {
+  width: 100%;
+}
+
+/* MAIN CONTENT FILTERS */
+
+/* Ensures the main filters and their contents are always visible */
+#main .filters,
+#main .filters form,
+#main .filters fieldset {
+  display: block !important;
+  height: auto !important;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+/* Styles fieldsets within the main filters area */
+#main .filters fieldset {
+  background: linear-gradient(180deg,#f6f1ff,#fff);
+  border: 1px solid #e1d7f2;
+  border-radius: 12px;
+  margin-bottom: 1em;
+  padding: .8em;
+}
+
+/* Styles the legend for main filter fieldsets */
+#main .filters legend {
+  color: #4a3f5c;
+  font-weight: 600;
+}
+
+/* Styles labels for main filter options */
+#main .filters label {
+  color: #3f3747;
+}
+
+/* Makes input and select fields in main filters take up the full width */
+#main .filters input,
+#main .filters select {
+  width: 100%;
+}
+
+/* HEADER ACTIONS AND DROPDOWNS */
+
+/* Styles the background of header action links on hover or when a dropdown is open */
+#header .actions a:hover,
+#header .actions a:focus,
+#header .dropdown:hover a,
+#header .open a {
+  background: linear-gradient(135deg,#ffe3f1,#f1eaff,#e8fff7);
+  border-radius: 12px;
+  color: #5e3f8c;
+}
+
+/* DASHBOARD STYLES */
+
+/* Styles the main dashboard container */
+#dashboard,
+#dashboard.own {
+  background: linear-gradient(180deg,#f3ecff,#fff7fb);
+  border: 1px solid #e1d7f2;
+  border-radius: 16px;
+  padding: 1em;
+}
+
+/* Styles headings on the dashboard */
+#dashboard h2,
+#dashboard h3 {
+  color: #4a3f5c;
+  font-weight: 600;
+}
+
+/* Styles lists within the dashboard */
+#dashboard ul {
+  background: linear-gradient(180deg,#fff,#f6f1ff);
+  border: 1px solid #e1d7f2;
+  border-radius: 12px;
+  padding: .6em;
+}
+
+/* Adds margin to dashboard list items */
+#dashboard li {
+  margin: .2em 0;
+}
+
+/* Styles links on the dashboard */
+#dashboard a {
+  border-radius: 10px;
+  color: #7b5fa3;
+  display: block;
+  padding: .35em .6em;
+}
+
+/* Styles dashboard links on hover */
+#dashboard a:hover {
+  background: linear-gradient(135deg,#ffe3f1,#f1eaff,#e8fff7);
+  color: #5e3f8c;
+}
+
+/* Styles the currently active/selected item on the dashboard */
+#dashboard .current {
+  background: #dff2ec;
+  border-radius: 10px;
+  color: #3f3747;
+  font-weight: 600;
+}
+
+/* HEADING DECORATION */
+
+/* Styles various headings with a consistent color and font weight */
+h1,
+h2,
+h3,
+h4,
+.splash .module h2,
+.splash .module h3 {
+  color: #4a3f5c;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Adds a decorative underline element to headings */
+h1:after,
+h2:after,
+h3:after,
+.splash .module h2:after,
+.splash .module h3:after {
+  background: #e6dbf5;
+  border-radius: 2px;
+  content: ""; /* This is required for the pseudo-element to be generated */
+  display: block;
+  height: 3px;
+  margin-top: .25em;
+  width: 3em;
+}
+
+/* Adds a bottom border to header menu items */
+#header .menu li {
+  border-bottom: 1px solid #dff2ec;
+}
+
+/* SPLASH PAGE FAVORITE TAGS */
+
+/* Styles every other "favorite" tag on the splash page with a distinct look */
+.splash .favorite li:nth-of-type(2n+1) a {
+  background: #b56ad9;
+  border: 1px solid #b56ad9;
+  border-radius: 10px;
+  color: #fff !important;
+}
+
+/* Styles the hover state for all favorite tags on the splash page */
+.splash .favorite li:nth-of-type(2n+1) a:hover,
+.splash .favorite li:nth-of-type(2n+2) a:hover {
+  background: #6a4f96;
+  border: 1px solid #6a4f96;
+  border-radius: 10px;
+  color: #fff !important;
+}
+
+/* GENERAL LINK STYLES */
+
+/* Defines the default appearance for links */
+a,
+a:link {
+  border-bottom: 2px solid rgba(123,95,163,.25);
+  color: #5e4b8b;
+  text-decoration: none;
+  transition: color .2s ease,border-color .2s ease,background .2s ease;
+}
+
+/* Defines the color for visited links */
+a:visited {
+  color: #6b5a94;
+}
+
+/* Defines the appearance for links on hover or focus */
+a:hover,
+a:focus {
+  background: linear-gradient(135deg,#e1d4f6,#f9d6ea);
+  border-radius: 4px;
+  color: #3f2f63;
+}
+
+/* BLURB HEADING LINKS */
+
+/* Styles links and images within blurb headings */
+.blurb h4 a:link,
+.blurb h4 img {
+  color: #fc62cf;
+  font-weight: 600;
+  vertical-align: bottom;
+}
+
+/* Styles blurb heading links on hover */
+.blurb h4 a:hover {
+  color: #3a9a83;
+}
+
+/* COMMENT STYLES */
+
+/* Styles comment containers with a border, shadow, and rounded corners */
+div.comment,
+li.comment {
+  background: #faf7ff;
+  border: 1px solid #e6dbf5;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(90,60,130,.1);
+  overflow: visible;
+  padding: .85em;
+  position: relative;
+  text-align: start;
+}
+
+/* Styles the byline (author info) of a comment */
+.comment h4.byline {
+  background: #e6f6f1;
+  border-bottom: 2px solid #9fd8c8;
+  border-radius: 10px 10px 0 0;
+  color: #3f7f6b;
+  padding: .4em .6em;
+}
+
+/* Styles alternating (even) comments in a thread */
+.thread .even {
+  background: #eef8f4;
+  border-radius: 12px;
+  margin: 0;
+}
+
+/* GENERAL CONTAINERS (LISTBOX, FIELDSET) */
+
+/* Styles various container elements with a consistent gradient, border, and shadow */
+.listbox,
+fieldset,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff,
+.dynamic form {
+  background: radial-gradient(circle at top,#fdeaf3 0%,#f6f1ff 45%,#e6f6f1 100%);
+  border: 1px solid #e6dbf5;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(120,80,120,.12);
+}
+
+/* ADVANCED HEADER STYLES */
+
+/* Styles the main header with a gradient background and shadow */
+#header {
+  background: linear-gradient(180deg,#fff7fb,#f3ecff);
+  box-shadow: 0 6px 14px rgba(90,60,130,.12);
+}
+
+/* Styles links within the header's heading section */
+#header .heading a {
+  color: #6a4f96;
+  font-weight: 600;
+}
+
+#header .heading a:hover {
+  color: #4f347a;
+}
+
+/* Styles the primary navigation bar with a gradient and inset shadow */
+#header .primary {
+  background: linear-gradient(90deg,#fdeaf3,#f1eaff,#e6f6f1);
+  box-shadow: inset 0 -2px 0 rgba(90,60,130,.15);
+}
+
+#header .primary a {
+  color: #3f3747;
+}
+
+/* Removes background on hover for the list item itself to allow link styling to show through */
+#header .primary li:hover,
+#header .primary li.open {
+  background: transparent;
+}
+
+/* Styles the link within the primary navigation on hover or when its dropdown is open */
+#header .primary li:hover > a,
+#header .primary li.open > a {
+  background: linear-gradient(135deg,#f9d6e6,#dff2ec);
+  border-radius: 12px;
+  color: #5e3f8c;
+}
+
+/* Styles dropdown menus and the small login form in the header */
+#header .menu,
+#small_login {
+  background: linear-gradient(180deg,#fdeaf3,#e6f6f1);
+  border: 1px solid #e6dbf5;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(120,80,120,.2);
+}
+
+/* Adds a bottom border to menu items in the header */
+#header .menu li {
+  border-bottom: 1px solid #e6dbf5;
+}
+
+/* Removes the bottom border from the last menu item */
+#header .menu li:last-child {
+  border-bottom: none;
+}
+
+/* Styles links within dropdown menus */
+#header .dropdown .menu a {
+  color: #4a3f5c;
+}
+
+/* Styles dropdown menu links on hover */
+#header .dropdown .menu a:hover {
+  background: #f3ecff;
+  border-radius: 10px;
+}
+
+/* Styles user-related links in the header (e.g., username, dashboard) */
+#header .user a {
+  border-radius: 10px;
+  color: #6a4f96;
+}
+
+#header .user a:hover {
+  background: #f3ecff;
+  color: #4f347a;
+}
+
+/* Styles the search input field in the header */
+#header .search input {
+  background: #faf7ff;
+  border: 1px solid #e6dbf5;
+  border-radius: 10px;
+  padding: .25em .5em;
+}
+
+/* Styles subheadings within the header (e.g., on login/logout pages) */
+#header h2 {
+  background: linear-gradient(90deg,#f1eaff,#e6f6f1);
+  border-top: 1px solid #e6dbf5;
+  color: #4a3f5c;
+  text-shadow: none;
+}
+
+/* ACTION BUTTONS AND LINKS */
+
+/* Styles various action links/buttons on hover/focus */
+.actions a:hover,
+.actions button:hover,
+.actions input:hover,
+.actions a:focus,
+.actions button:focus,
+.actions input:focus,
+.action:hover,
+.action:focus,
+label.action:hover,
+span.unread {
+  background: linear-gradient(180deg,#f9d6e6,#dff2ec);
+  border-color: #e6dbf5;
+  box-shadow: 0 5px 12px rgba(90,60,130,.22);
+  color: #3f3747;
+}
+
+/* Adjusts margin for pagination links */
+ol.pagination a,
+ol.pagination span.current {
+  margin: .25em .15em;
+}
+
+/* Styles delete links with a distinctive appearance */
+.delete a,
+span.delete {
+  background: #f9d6e6;
+  border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(120,80,120,.25);
+  color: #7a355a;
+}
+
+/* Styles secondary action menus */
+.actions .secondary {
+  background: linear-gradient(180deg,#fff7fb,#f3ecff);
+  border: 1px solid #e6dbf5;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(120,80,120,.2);
+}
+
+/* Styles various links within work blurbs on hover */
+.work .fandoms a:hover,
+.work .tags a:hover,
+.work .meta a:hover,
+.fandoms a:hover,
+.tags a:hover {
+  background: linear-gradient(135deg,#f9d6e6,#dff2ec);
+  border-bottom-color: #e6dbf5;
+  border-radius: 6px;
+  color: #4f347a;
+}
+
+/* General style for action buttons and links */
+.actions a,
+.actions a:link,
+.action,
+.actions button,
+.actions input,
+input[type="submit"],
+button,
+.work .actions a,
+.work .actions button,
+.work .actions input,
+.actions label,
+.current {
+  background: linear-gradient(180deg,#fdeaf3,#e6f6f1);
+  border: 1px solid #e6dbf5;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(90,60,130,.18);
+  color: #4a3f5c;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: .45em .95em;
+  text-decoration: none;
+  transition: background .2s,box-shadow .2s,color .2s;
+}
+
+/* Hover/focus state for general action buttons and links */
+.actions a:hover,
+.actions button:hover,
+.actions input:hover,
+.actions a:focus,
+.actions button:focus,
+.actions input:focus,
+.work .actions a:hover,
+.work .actions button:hover,
+.work .actions input,
+.work .actions input:hover,
+#kudos_submit,
+#bookmark_form input[type="submit"],
+#comment_form input[type="submit"] {
+  background: linear-gradient(180deg,#f9d6e6,#dff2ec);
+  box-shadow: 0 5px 12px rgba(90,60,130,.22);
+  color: #3f3747;
+}
+
+/* Active state (when being clicked) for action buttons */
+.actions a:active,
+.actions .current,
+.work .actions .current {
+  background: #e6dbf5;
+  border-color: #d8c9f0;
+  box-shadow: inset 0 2px 4px rgba(90,60,130,.25);
+  color: #3f3747;
+}
+
+/* Styles for secondary action buttons (e.g., "Cancel") */
+.actions .secondary a,
+.actions .secondary button {
+  background: linear-gradient(180deg,#f6f1ff,#fff7fb);
+  color: #5a4a78;
+}
+
+/* Styles for delete buttons/links */
+.actions .delete a,
+.action.delete,
+button.delete,
+input.delete {
+  background: linear-gradient(180deg,#fde1ec,#f9c8de);
+  border: 1px solid #e7a3c4;
+  box-shadow: 0 4px 10px rgba(150,60,100,.22);
+  color: #6a234a;
+  font-weight: 600;
+}
+
+/* Hover state for delete buttons/links */
+.actions .delete a:hover,
+.action.delete:hover,
+button.delete:hover,
+input.delete:hover {
+  background: linear-gradient(180deg,#f9c8de,#f2b1d1);
+  box-shadow: 0 6px 14px rgba(150,60,100,.3);
+  color: #4f1736;
+}
+
+/* Styles for final confirmation delete buttons (e.g., in a confirmation dialog) */
+.actions .delete input[type="submit"],
+.actions .delete button[type="submit"],
+form.delete input[type="submit"],
+form.delete button {
+  background: linear-gradient(180deg,#f2a7c6,#e78bb9);
+  border: 1px solid #cc6a9e;
+  box-shadow: 0 6px 16px rgba(170,40,90,.4);
+  color: #4a0f2c;
+  font-weight: 700;
+}
+
+/* Hover state for final confirmation delete buttons */
+.actions .delete input[type="submit"]:hover,
+.actions .delete button[type="submit"]:hover,
+form.delete input[type="submit"]:hover,
+form.delete button:hover {
+  background: linear-gradient(180deg,#e78bb9,#d46aa3);
+  color: #3a0a20;
+}
+
+/* Active state for action links inside a work blurb */
+.work .actions a:active,
+.work .actions .current,
+#kudos_submit:active {
+  background: #e6dbf5;
+  box-shadow: inset 0 2px 4px rgba(90,60,130,.25);
+  color: #3f3747;
+}
+
+/* Styles for the disabled state of the kudos button */
+#kudos_submit[disabled],
+#kudos_submit.disabled {
+  background: #f3ecff;
+  border-color: #e6dbf5;
+  box-shadow: none;
+  color: #8a7f99;
+  opacity: .9;
+}
+
+/* Ensures the bookmark form displays correctly */
+#bookmark_form {
+  display: inline-block;
+}
+
+/* INPUT FIELD FOCUS */
+
+/* Styles input fields when they are focused (clicked on or tabbed to) */
+input:focus,
+textarea:focus,
+select:focus {
+  background: linear-gradient(135deg,#fff6cc,#fffbe8);
+  border-color: #e6cf7a;
+  box-shadow: 0 0 0 2px rgba(230,207,122,.35), inset 0 1px 2px rgba(0,0,0,.08);
+  color: #3f3747;
+  outline: none;
+}
+
+/* CATEGORY-SPECIFIC TAG STYLES */
+
+/* Styles for Fandom tags */
+.fandom .tag,
+.fandoms .tag,
+.work .fandom a.tag,
+.work .fandoms a.tag,
+dl.meta dd.fandom a.tag {
+  background: linear-gradient(135deg,#c9e6d8,#e9f6f0);
+  border: 1px solid #aed6c5;
+  border-radius: 6px;
+  color: #2f4f44 !important;
+  padding: .15em .5em;
+}
+
+/* Layout adjustments for the fandoms list to handle wrapping */
+.fandoms {
+  display: block;
+  font-size: 0; /* font-size: 0 on parent and rem on child is a trick to remove extra space between inline-block elements */
+  line-height: 1.6;
+}
+
+.fandoms a.tag {
+  font-size: 0.95rem; /* Reset font size from parent */
+  margin-right: .35em;
+}
+
+/* Styles for Warning tags */
+.warning a.tag,
+dl.meta dd.warning a.tag {
+  background: linear-gradient(135deg,#e7a3c3,#f3cfdf);
+  border: 1px solid #d489ab;
+  border-radius: 6px;
+  color: #4a1630 !important;
+  padding: .15em .5em;
+}
+
+/* Styles for Relationship tags */
+.relationships .tag,
+.work .relationships a.tag,
+dl.meta dd.relationship a.tag {
+  background: linear-gradient(135deg,#cfe6f2,#eaf5fb);
+  border: 1px solid #b6d3e6;
+  border-radius: 6px;
+  color: #2f4f63 !important;
+  padding: .15em .5em;
+}
+
+/* Styles for Character tags */
+.character .tag,
+.work .character a.tag,
+dl.meta dd.character a.tag,
+.characters .tag,
+.work .characters a.tag {
+  background: linear-gradient(135deg,#f4b6d2,#fde3ef);
+  border: 1px solid #e7a2c3;
+  border-radius: 6px;
+  color: #5c1f3f !important;
+  padding: .15em .5em;
+}
+
+/* Styles for Rating tags (in the metadata section) */
+.rating .tag,
+.work .rating a.tag,
+dl.meta dd.rating a.tag {
+  background: linear-gradient(135deg,#f7e6b5,#fff2cc);
+  border: 1px solid #e6cf8f;
+  border-radius: 6px;
+  color: #5a4a1f !important;
+  padding: .15em .5em;
+}
+
+/* Hover state for all category-specific tags within the metadata list */
+li.relationships a:hover,
+li.relationships a:visited:hover,
+dl.meta dd.relationship a.tag:hover,
+dl.meta dd.relationship a.tag:visited:hover,
+dl.meta dd.warning a.tag:hover,
+dl.meta dd.warning a.tag:visited:hover,
+dl.meta dd.character a.tag:hover,
+dl.meta dd.character a.tag:visited:hover,
+dl.meta dd.fandom a.tag:hover,
+dl.meta dd.fandom a.tag:visited:hover,
+dl.meta dd.rating a.tag:hover,
+dl.meta dd.rating a.tag:hover:visited {
+  background: linear-gradient(135deg,#cbb7ee,#e9b9d8);
+  border-color: #b8a3db;
+  color: #2f234f !important;
+}
+
+/* Styles for Freeform tags */
+.freeforms .tag,
+.work .freeforms a.tag {
+  background: linear-gradient(135deg,#b2cff0,#d6e7f7);
+  border-color: #98b9dc;
+  color: #1f324a !important;
+  padding: .15em .5em;
+}
+
+/* General hover state for tags within a work blurb */
+.work a.tag:hover {
+  background: linear-gradient(135deg,#cbb7ee,#e9b9d8);
+  border-color: #b8a3db;
+  color: #2f234f !important;
+}
+
+/* TAG LIST LAYOUT */
+
+/* Fixes for tag list wrapping and display */
+.tags li,
+.tags li::after,
+.tags li.relationships::after,
+.tags li.characters::after,
+.tags li.freeforms::after,
+.tags li.warnings::after {
+  content: ""; /* This is used to control spacing and wrapping */
+  display: inline-block;
+  line-height: 2.0;
+  margin: 0 .25em .3em 0;
+  margin-right: .2em;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+/* Ensures tag lists are visible */
+.tags,
+.tags ul {
+  overflow: visible;
+}
+
+/* Prevents tags from breaking onto multiple lines */
+a.tag {
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* Adds slight padding to tag containers */
+.tags {
+  padding: .15em .25em;
+}
+
+/* BLURB HEADING ADJUSTMENT */
+
+/* Adjusts the top margin of the heading within a blurb's header */
+.blurb .header .heading {
+  margin-top: 12px;
+}
+
+/* WORK AND BLURB HEADING LINKS */
+
+/* Styles the heading links for works */
+.work .header h4 a,
+.index .work h4 a,
+.blurb h4 a {
+  color: #4f3f78;
+  font-weight: 600;
+}
+
+/* Styles visited heading links for works */
+.work .header h4 a:visited,
+.index .work h4 a:visited,
+.blurb h4 a:visited {
+  color: #7a6aa8;
+}
+
+/* Styles the hover state for work heading links */
+.work .header h4 a:hover,
+.index .work h4 a:hover,
+.blurb h4 a:hover {
+  background: linear-gradient(135deg,#e1d4f6,#f9d6ea);
+  border-radius: 4px;
+  color: #3f2f63;
+}
+
+/* READING HISTORY */
+
+/* Highlights the heading of a work that has been viewed/is in your history */
+.reading h4.viewed {
+  background: #e6f6f1;
+}
+
+/* COMMENT USER ICON */
+
+/* Styles the user icon next to a comment, positioning it correctly */
+.comment div.icon {
+  border-bottom: 5px solid #f9c8de;
+  float: left;
+  margin: -1.5625em 0.5625em 0.5625em 0;
+  padding-top: 1.5em;
+}
+
+/*============================================================
+REPLACE THE AO3 ICONS - reversi / berry blue color scheme
+============================================================*/ 
+
+ul.required-tags,
+.bookmark .status span,
+.blurb .icon {
+  opacity: 1 !important; /* some public site skins like Reversi set the opacity of some icons to 0.9, which I want to prevent here */
+}
+
+/*========== ICONS FOR USERS, COLLECTIONS, TAGS etc. ==========*/
+/* have to use "content" instead of "background" to replace some of these icons, as they were coded differently in the default archive skin */
+
+/* default user icon */
+img[src$="/images/skins/iconsets/default/icon_user.png"] {
+  background:
+    #5998d6 /* change icon color here */
+    content-box;
+  border: 1.5px solid #ddd; /* change border width and color here */
+  box-sizing: border-box;
+  content: url("https://zerafinacss.github.io/ao3/icons/user-default-01.png"); /* url of new icon */
+}
+
+/* anon comment icon */
+.comment .icon .anonymous {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/anon-01.png"), /* url of new icon */
+    #6e6e6e /* change background color here */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid #00000025; /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/* guest comment icon */
+.comment .icon .visitor {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/user-visitor-01.png"), /* url of new icon */
+    #6e6e6e /* change background color here */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid #00000025; /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/* default collection icon */
+img[src$="/images/skins/iconsets/default/icon_collection.png"] {
+  background:
+    linear-gradient(transparent, #ffffff50 45% 55%, transparent), /* subtle gradient */
+    #616c90 /* change background color here */
+    border-box;
+  border: 1.5px solid #00000025; /* change border width and color here */
+  box-sizing: border-box;
+  content: url("https://zerafinacss.github.io/ao3/icons/collection-01.png"); /* url of new icon */
+}
+
+/* tag icons */
+.tagset .primary .icon,
+.tag .primary .icon,
+.index .tagset .icon {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/tag-01.png"), /* url of new icon */
+    linear-gradient(transparent, #ffffff50 45% 55%, transparent), /* subtle gradient */
+    #5998d6 /* change background color here */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid #00000025; /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/* icon for unrevealed works */
+.index .mystery .icon {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/anon-01.png"), /* url of new icon */
+    linear-gradient(transparent, #ffffff50 45% 55%, transparent) /* subtle gradient */
+    #616c90 /* change background color here */
+    content-box;
+  background-size: cover;
+  border: 1.5px solid #ddd; /* change width and color of outer border here */
+  box-shadow: inset 0 0 0 3px #fff; /* change width and color of inner border here */
+  box-sizing: border-box;
+}
+
+/* admin icon => seen on news posts */
+.admin .primary .icon {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/admin-01.png") /* url of new icon */
+    no-repeat,
+    linear-gradient(#ffffff40, transparent) /* subtle gradient */
+    #5998d6 /* change background color here */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid #00000099; /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/* default icon for skins */
+.skins .primary .icon:not(:has(a .icon)),
+.index .skins .icon:not(:has(a .icon)) {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/skins-01.png"), /* url of new icon */
+    #5998d6 /* change icon color here */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid #ddd; /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/*>========== CONTENT SYMBOLS ==========<*/
+
+/* sets the size of the symbols keys icons */
+#symbols-key dl img,
+#bookmark-symbols-key img {
+  height: 0 !important;
+  padding: 25px 0 0 25px;
+  width: 0 !important;
+}
+
+/* sizing and borders for content symbols */
+.blurb ul.required-tags li a > span,
+.bookmark p.status a > span,
+#symbols-key dl img,
+#bookmark-symbols-key img {
+  background-origin: border-box;
+  background-size: cover;
+  border: 1px solid; /* change border width here or delete this if you don't want the borders */
+  box-sizing: border-box;
+}
+
+/* empty symbols boxes (no rating, category or warning) */
+.required-tags .rating-notrated,
+.required-tags .category-none,
+.required-tags .warning-no,
+.status .count,
+img[src$="/images/skins/iconsets/default/rating-notrated.png"],
+img[src$="/images/skins/iconsets/default/category-none.png"],
+img[src$="/images/skins/iconsets/default/warning-no.png"] {
+  background: #ffffffcc; /* change background color here */
+  color: #00000040; /* change border color here */
+}
+
+/*
+The following content symbols have transparent borders, allowing the background to show through.
+This automatically gives the icons borders that have a slightly darker color than the background color.
+You can replace the border color with any other rgb, rgba, or hex color, transparent or not.
+*/
+
+/*>>========== Rating ==========<<*/
+
+/* General Audiences */
+.required-tags .rating-general-audience,
+img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-gen-01.png"), /* url of new icon */
+    #08b3bc; /* change background color here */ 
+  color: #0000001a; /* change border color here */
+}
+
+/* Teen And Up Audiences */
+.required-tags .rating-teen,
+img[src$="/images/skins/iconsets/default/rating-teen.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-teen-01.png"), /* url of new icon */
+    #5998d6; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* Mature */
+.required-tags .rating-mature,
+img[src$="/images/skins/iconsets/default/rating-mature.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-mature-01.png"), /* url of new icon */
+    #e8689b; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* Explicit */
+.required-tags .rating-explicit,
+img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-explicit-01.png"), /* url of new icon */
+    #a13374; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/*>>========== Relationships, pairings, orientations ==========<<*/
+
+/* F/F */
+.required-tags .category-femslash,
+img[src$="/images/skins/iconsets/default/category-femslash.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-ff-01.png"), /* url of new icon */
+    #e8689b; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* F/M */
+.required-tags .category-het,
+img[src$="/images/skins/iconsets/default/category-het.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-mf-01.png"), /* url of new icon */
+    #a13374; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* Gen */
+.required-tags .category-gen,
+img[src$="/images/skins/iconsets/default/category-gen.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-gen-01.png"), /* url of new icon */
+    #08b3bc; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* M/M */
+.required-tags .category-slash,
+img[src$="/images/skins/iconsets/default/category-slash.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-mm-01.png"), /* url of new icon */
+    #5998d6; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* Multi */
+.required-tags .category-multi,
+img[src$="/images/skins/iconsets/default/category-multi.png"] {
+  background:
+    conic-gradient(from 270deg, #08b3bc 25%, #a13374 25% 50%, #5998d6 50% 75%, #e8689b 75%); /* conic gradient with the colors of the relationship icons */
+  color: #0000001a; /* change border color here */
+}
+
+/* Other relationships */
+.required-tags .category-other,
+img[src$="/images/skins/iconsets/default/category-other.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-other-01.png"), /* url of new icon */
+    #6e6e6e; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/*>>========== Content warnings ==========<<*/
+
+/* Author chose not to warn */
+.required-tags .warning-choosenotto,
+img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/warning-choosenotto-01.png"), /* url of new icon */
+    #e8689b; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* Warnings apply */
+.required-tags .warning-yes,
+img[src$="/images/skins/iconsets/default/warning-yes.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/warning-yes-01.png"), /* url of new icon */
+    #a13374; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* External work */
+.required-tags .external-work,
+img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/warning-external-work-01.png"), /* url of new icon */
+    #5998d6; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/*>>========== Completion status ==========<<*/
+
+/* uncomplete/unfulfilled */
+.required-tags .complete-no,
+img[src$="/images/skins/iconsets/default/complete-no.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/complete-no-01.png"), /* url of new icon */
+    #a13374; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* completed/filled */
+.required-tags .complete-yes,
+img[src$="/images/skins/iconsets/default/complete-yes.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/complete-yes-01.png"), /* url of new icon */
+    #08b3bc; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/*>>========== Bookmark symbols ==========<<*/
+
+/* Rec bookmark */
+.status .rec,
+img[src$="/images/skins/iconsets/default/bookmark-rec.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-rec-01.png"), /* url of new icon */
+    #5998d6; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* Public bookmark */
+.status .public, 
+img[src$="/images/skins/iconsets/default/bookmark-public.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-public-01.png"), /* url of new icon */
+    #5998d6; /* change background color here */
+  color: #0000001a; /* change border color here */
+}
+
+/* Private bookmark */
+.status .private, 
+img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-locked-01.png"), /* url of new icon */
+    #000; /* change lock color here */
+  color: #0000001a; /* change border color here */
+  font-size: 0;
+}
+
+/* fix private bookmark */
+.status .private .text {
+  background: none;
+  /* This seems to be the only bookmark icon where the background is put in the .text element instead of it's parent.
+  I want it to match the rest, so I'm hiding the background of the .text element. */
+}
+
+/* Hidden bookmark */
+.status .hidden,
+img[src$="/images/skins/iconsets/default/bookmark-hidden.png"] {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-locked-01.png"), /* url of new icon */
+    #e8689b; /* change lock color here */
+  color: #0000001a; /* change border color here */
+}
+
+/*>========== RSS ICON ==========<*/
+
+/* hide old rss icon */
+a.rss span {
+  background: none;
+  padding: 0;
+}
+
+/* setup for the new rss icon */
+.actions li a.rss {
+    align-content: center;
+    align-items: center;
+    column-gap: 0.3em;
+  display: inline-flex;
+}
+
+/* new rss icon */
+.actions li a.rss::before {
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rss-01.png") /* url of new icon */
+     #e8689b; /* change background color here */
+  background-size: cover;
+  border: 1px solid var(--icon-border1);
+  border-radius: 2px;
+  box-sizing: border-box;
+  content: "";
+  height: 0.85em;
+  width: 0.85em;
+}
+
+/*>========== KUDOS ICON ==========<*/
+
+/* hide old kudos icon */
+p.kudos {
+  background: none;
+}
+
+/* new kudos icon */
+div:has(> p.kudos)::before {
+  background: url("https://zerafinacss.github.io/ao3/icons/kudos-01.png"); /* url of new icon */
+  background-size: cover;
+  content: "";
+  filter: invert(62%) sepia(14%) saturate(1799%) hue-rotate(172deg) brightness(90%) contrast(86%); /* adjust filter values to change color */
+  height: 55px;
+  position: absolute;
+  width: 55px;
+}
+
+/*>========== LOCK ICON for restricted works ==========<*/
+
+img[src$="/images/lockblue.png"] {
+  content: url("https://zerafinacss.github.io/ao3/icons/lock-01.png"); /* url of new icon */
+  filter: brightness(0) saturate(100%) invert(62%) sepia(14%) saturate(1799%) hue-rotate(172deg) brightness(90%) contrast(86%); /* adjust filter values to change color */
+}
+
+/*========== AO3 LOGO IN HEADER ==========*/
+/* just delete the following part of the code if you don't want to replace the logo */
+
+#header .logo {
+  content: url("/images/logo.png"); /* this replaces the logo with a higher quality version */
+  /* you can add filters here to change the logo color */
+}
