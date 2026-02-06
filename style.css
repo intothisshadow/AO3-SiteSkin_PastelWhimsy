@@ -919,13 +919,15 @@ dl.meta dd.fandom a.tag {
 }
 
 /* Styles for Warning tags */
-.warning a.tag,
+.warnings a.tag,
+dl.meta dd.warnings a.tag,.warning a.tag,
 dl.meta dd.warning a.tag {
-  background: linear-gradient(135deg,#e7a3c3,#f3cfdf);
-  border: 1px solid #d489ab;
+  background: linear-gradient(135deg,#d46a9a,#8c6ad4);
+  border: 1px solid #b85a86;
   border-radius: 6px;
-  color: #4a1630 !important;
-  padding: .15em .5em;
+  box-shadow: 0 0 0 1px rgba(140,106,212,.25);
+  color: #fff !important;
+  padding: .15em .55em;
 }
 
 /* Styles for Relationship tags */
@@ -945,8 +947,8 @@ dl.meta dd.relationship a.tag {
 dl.meta dd.character a.tag,
 .characters .tag,
 .work .characters a.tag {
-  background: linear-gradient(135deg,#f4b6d2,#fde3ef);
-  border: 1px solid #e7a2c3;
+background: linear-gradient(135deg,#f4b6d2,#fde3ef);
+border: 1px solid #e7a2c3;
   border-radius: 6px;
   color: #5c1f3f !important;
   padding: .15em .5em;
