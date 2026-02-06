@@ -38,7 +38,8 @@ https://github.com/ZerafinaCSS/ | https://archiveofourown.org/works/57331222
 
 # SCREENSHOTS
 
-![image](https://github.com/intothisshadow/AO3-SiteSkin_Dreamy/blob/main/screenshot1.png)
-![image](https://github.com/intothisshadow/AO3-SiteSkin_Dreamy/blob/main/screenshot2.png)
-![image](https://github.com/intothisshadow/AO3-SiteSkin_Dreamy/blob/main/screenshot3.png)
-![image](https://github.com/intothisshadow/AO3-SiteSkin_Dreamy/blob/main/screenshot4.png)
+![image](https://github.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/blob/main/images/screenshot1.jpg)
+![image](https://github.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/blob/main/images/screenshot2.jpg)
+![image](https://github.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/blob/main/images/screenshot3.jpg)
+![image](https://github.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/blob/main/images/screenshot4.jpg)
+![image](https://github.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/blob/main/images/screenshot5.jpg)
