@@ -1,6 +1,6 @@
 # Pastel Whimsy — AO3 Site Skin
 
-A soft, pastel-themed site skin for [Archive of Our Own](https://archiveofourown.org), built on a structured base-theme architecture with a full CSS variable system. Includes a companion mobile add-on and Zerafina icon replacements.
+A soft, cozy site skin for [Archive of Our Own](https://archiveofourown.org), designed for long, comfortable reading  without sacrificing charm. It blends blush pinks, lavender purples, and  fresh mint greens into gentle gradients that feel light, dreamy, and  calming. V2 is built on a structured base-theme architecture with a full CSS variable system. Includes a companion mobile add-on and Zerafina icon replacements.
 
 **Author:** intothisshadow  
 **Version:** 2.1.0  
@@ -72,7 +72,7 @@ README.md          This file
 
 ### Fonts via Stylus (recommended)
 
-AO3's skin system cannot load external fonts directly. For the best experience, load the fonts separately using [Stylus](https://add0n.com/stylus.html), a free browser extension.
+AO3's skin system cannot load external fonts directly. For the best experience, load the fonts separately using *Stylus*, a free browser extension.
 
 1. Install Stylus for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) or [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 2. Click the Stylus icon → **Manage** → **Write new style**
