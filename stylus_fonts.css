@@ -1,0 +1,38 @@
+/*
+ * ============================================================
+ * Pastel Whimsy — Font Loader (Stylus)
+ * by intothisshadow https://www.so-obsessed.com
+ *
+ * HOW TO USE:
+ * This loads the custom fonts used by Pastel Whimsy on AO3.
+ * AO3's site skin system cannot load external fonts directly,
+ * but Stylus (a browser extension) can.
+ *
+ * INSTALL:
+ * 1. Install the Stylus extension for your browser:
+ *    - Firefox: https://addons.mozilla.org/en-US/firefox/addon/styl-us/
+ *    - Chrome:  https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne
+ *
+ * 2. Click the Stylus icon in your browser toolbar → Manage
+ *
+ * 3. Click "Write new style"
+ *
+ * 4. Paste this entire file into the code editor
+ *
+ * 5. Under "Applies to", click "URLs on the domain" and
+ *    enter:  archiveofourown.org
+ *
+ * 6. Give the style a name (e.g. "Pastel Whimsy Fonts") and Save
+ *
+ * That's it. The fonts will load automatically whenever you
+ * visit AO3, and Pastel Whimsy will use them.
+ * ============================================================
+ *
+ * FONTS LOADED:
+ * - Lora           — body text (regular, italic, semibold)
+ * - Playfair Display — headings (semibold, bold, italic)
+ * - JetBrains Mono — code and pre blocks
+ * ============================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=JetBrains+Mono:wght@400;500&display=swap');

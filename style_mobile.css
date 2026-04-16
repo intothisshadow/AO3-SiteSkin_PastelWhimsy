@@ -1,0 +1,709 @@
+/*
+ * Theme Name: Pastel Whimsy — Mobile Add-on
+ * Author: intothisshadow
+ * Author URI: https://www.so-obsessed.com
+ * Last Updated: 2026-Apr-16 07:12 GMT
+ * ============================================
+ * HOW TO USE:
+ * 1. Make a site skin with style.css and set Media to "all". Save.
+ * 2. Make a second site skin with this file, set Media to:
+ * - handheld
+ * - only screen and (max-width: 42em)
+ * - only screen and (max-width: 62em)
+ * Then set the skin from Step 1 as the parent. Save and activate.
+ * ============================================
+ *
+ * BREAKPOINTS:
+ * ≤ 62em — tablet / landscape phone
+ * ≤ 42em — portrait phone
+ * ≤ 30em — very small phones
+ *
+ * ============================================
+ */
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * SHARED — applies at all mobile widths (≤ 62em)
+ * ════════════════════════════════════════════════════════
+ */
+
+@media only screen and (max-width: 62em)
+{
+
+  /* ── Layout & overflow ─────────────────────────────── */
+
+  /* Prevent horizontal scroll/shift */
+  html
+  {
+    overflow-x: hidden;
+  }
+
+  body
+  {
+    background-color: var(--clr-bg) !important;
+    max-width: 100%;
+    overflow-x: visible;
+  }
+
+  #outer
+  {
+    background: linear-gradient(180deg, var(--clr-bg) 0%, var(--clr-lavender) 100%) !important;
+    max-width: 100%;
+    min-height: 100vh !important;
+    overflow-x: hidden;
+  }
+
+  /* Main content — ensure consistent side padding on mobile */
+  #main
+  {
+    box-sizing: border-box !important;
+    padding-left: 3.5% !important;
+    padding-right: 3.5% !important;
+    width: 100% !important;
+  }
+
+  /* ── Typography ─────────────────────────────────────── */
+
+  /* Reduce heading sizes slightly */
+  h1
+  {
+    font-size: 1.35em;
+  }
+
+  h2
+  {
+    font-size: 1.15em;
+  }
+
+  h3
+  {
+    font-size: 1.05em;
+  }
+
+  /* ── Header ─────────────────────────────────────────── */
+
+  /* Hide header search on mobile — too cramped */
+  #header .search,
+  #header li.search
+  {
+    display: none !important;
+  }
+
+  /* User avatar icons — smaller on mobile, simple 1px border only */
+  .icon
+  {
+    height: 40px !important;
+    width: 40px !important;
+  }
+
+  p.icon img,
+  .comment div.icon img,
+  .comment div.icon a img,
+  .primary .icon img,
+  #greeting p.icon img
+  {
+    border: 1px solid var(--clr-accent) !important;
+    box-shadow: none !important;
+    height: 40px !important;
+    outline: none !important;
+    width: 40px !important;
+  }
+
+  p.icon a,
+  #greeting p.icon a,
+  .primary.header.module p.icon a,
+  #main p.icon a
+  {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: auto !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
+
+  .comment div.icon
+  {
+    border-bottom: none !important;
+    height: 42px !important;
+    margin: 0 0.5em 0.5em 0 !important;
+    padding-top: 0 !important;
+    width: 42px !important;
+  }
+
+  /* Profile page header action buttons — breathing room */
+  .home .header ul.actions
+  {
+    margin-bottom: 0.643em;
+    padding-top: 1em;
+  }
+
+  /* ── Blurb cards ─────────────────────────────────────── */
+
+  /* Required-tags icons — scale down on mobile */
+  .blurb ul.required-tags
+  {
+    transform: scale(0.7);
+    transform-origin: top left;
+  }
+
+  /*
+ * Blurb header — let title use full width on mobile.
+ * Required-tags stay absolutely positioned (AO3's 2×2 icon grid depends on it).
+ * We add padding-top to the header to push content below the ~56px icon block,
+ * then clear both the 65px left and 5.25em right margins AO3 sets on .heading.
+ */
+  .blurb .header
+  {
+    min-height: 0 !important;
+    padding-top: 44px !important;
+  }
+
+  .blurb .header .heading,
+  .blurb .header ul
+  {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /*
+ * datetime — AO3 positions this absolute top-right of the blurb,
+ * which overflows on mobile. Make it static and inline.
+ */
+  .blurb .datetime
+  {
+    display: inline !important;
+    float: right !important;
+    font-size: 0.85em !important;
+    position: static !important;
+  }
+
+  /* Stats — stop floating right, display as block below content */
+  .blurb dl.stats
+  {
+    display: block !important;
+    float: none !important;
+    margin-top: 0.5em !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
+
+  /* Reduce card padding on blurbs */
+  li.work.blurb.group,
+  li.bookmark.blurb.group,
+  li.collection.blurb.group,
+  li.series.blurb.group,
+  li.blurb.group,
+  .work
+  {
+    box-sizing: border-box !important;
+    padding: 0.75em;
+    width: 100% !important;
+  }
+
+  /* Index group containers — constrain to viewport */
+  .index.group
+  {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Allow panel to show when filters open */
+  .filtering .index.group
+  {
+    overflow: visible !important;
+  }
+
+  /* ── Tags & content ──────────────────────────────────── */
+
+  /* AO3's div.preface has margin: 1.5em 3em — remove side margins on mobile */
+  div.preface
+  {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /*
+ * Tags — pills wrap as whole units to next line (same behaviour as desktop).
+ * white-space:normal allows text inside very long pills to wrap too.
+ * The .tags container is set to white-space:normal so pills can wrap.
+ */
+  a.tag
+  {
+    box-sizing: border-box;
+    display: inline-block !important;
+    max-width: 100%;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  .tags,
+  .tags ul,
+  .fandoms,
+  h5.fandoms.heading
+  {
+    max-width: 100%;
+    overflow: visible;
+    white-space: normal !important;
+  }
+
+  /* ── Forms & padding ─────────────────────────────────── */
+
+  /* Reduce work meta block padding */
+  .work.meta.group
+  {
+    padding: 0.75em;
+  }
+
+  /* Reduce work page inner padding */
+  #chapters .chapter.preface.group
+  {
+    padding: 0.75em;
+  }
+
+  /* Reduce kudos section padding */
+  #kudos
+  {
+    padding: 0.5em 0.75em;
+  }
+
+  /* Reduce fieldset outer card padding */
+  .listbox,
+  fieldset:not(#header fieldset):not(#header *):not(#inbox-form fieldset.comments):not(#inbox-form fieldset.actions),
+  form dl,
+  dd.hideme,
+  .dynamic form
+  {
+    padding: 0.75em;
+  }
+
+  /* Reduce system page main padding */
+  body.sessions-new #main,
+  body.users-new #main,
+  body.static #main,
+  body.skins-new #main,
+  body.skins-edit #main
+  {
+    padding: 1em !important;
+  }
+
+  /* ── Dashboard ───────────────────────────────────────── */
+
+  /*
+ * Dashboard — strip our card styling from ul groups, match AO3's inline layout.
+ * AO3's 25-media-midsize.css sets #dashboard ul { display: inline } and
+ * #dashboard li { display: inline }. We override with inline-block for
+ * slightly better spacing, and strip our desktop card borders.
+ */
+  div#dashboard,
+  #dashboard,
+  nav#dashboard
+  {
+    padding: 0.5em 0;
+  }
+
+  div#dashboard ul:not(.hidden)
+  {
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    display: inline-block !important;
+    padding: 0 !important;
+  }
+
+  div#dashboard li,
+  #dashboard li
+  {
+    display: inline-block !important;
+    margin: 0 0.1em !important;
+  }
+
+  div#dashboard a,
+  #dashboard a,
+  nav#dashboard a
+  {
+    display: inline-block !important;
+    padding: .15em .4em !important;
+  }
+
+  /* ── Footer ──────────────────────────────────────────── */
+
+  /* Footer — stack menu columns vertically on mobile */
+  #footer ul.navigation.actions
+  {
+    display: block !important;
+  }
+
+  #footer ul.navigation.actions li.module.group,
+  #footer .menu,
+  #footer .module
+  {
+    box-sizing: border-box !important;
+    display: block !important;
+    float: none !important;
+    margin-bottom: 0.75em !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  #footer .menu:last-child,
+  #footer .module:last-child
+  {
+    margin-bottom: 0 !important;
+  }
+
+  /* ── Splash modules ──────────────────────────────────── */
+
+  /* Reduce splash module padding */
+  .random.readings.module,
+  .latest.messages.module,
+  .splash .favorite
+  {
+    padding: 0.75em;
+  }
+
+  /* ── Filter panel (mobile slide-in) ─────────────────── */
+
+  /* Styling for the panel — positioning handled in desktop skin's mobile block */
+
+  .javascript #main .filters
+  {
+    background: #f3ecff !important;
+    border-left: 3px solid #d9cdee !important;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.18) !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    max-width: 95vw !important;
+    transition: right 0.2s ease !important;
+  }
+
+  /* Page shift when open */
+  .filtering
+  {
+    right: 14em !important;
+  }
+
+  /* Fieldsets inside panel */
+  .javascript body #main form.filters fieldset,
+  .javascript #main #main form.filters fieldset
+  {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    height: auto !important;
+    margin: 0 0 0.5em 0 !important;
+    overflow: visible !important;
+    padding: 0.5em 0.75em !important;
+    position: relative !important;
+    visibility: visible !important;
+    width: 100% !important;
+    z-index: 450 !important;
+  }
+
+  .javascript body #main form.filters .submit,
+  .javascript body #main form.filters p.submit
+  {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0.75em !important;
+  }
+
+  .javascript form.filters *
+  {
+    max-width: 100% !important;
+  }
+
+  .filtering .filters #leave_filters
+  {
+    background: transparent !important;
+    border-bottom: none !important;
+    bottom: -101em !important;
+    left: -10em !important;
+    position: fixed !important;
+    right: -10em !important;
+    top: -101em !important;
+    z-index: 0 !important;
+  }
+
+  .filtering #leave_filters:focus
+  {
+    outline: none !important;
+  }
+
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * SMALL — portrait phone (≤ 42em)
+ * ════════════════════════════════════════════════════════
+ */
+
+@media only screen and (max-width: 42em)
+{
+
+  /* ── Layout ──────────────────────────────────────────── */
+
+  /*
+ * Reset filtered two-column layout to full width —
+ * our desktop .filtered rules override AO3's own narrow reset
+ */
+  .filtered .index
+  {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .filtered#dashboard
+  {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  /* Stack inbox layout vertically */
+  form#inbox-form
+  {
+    clear: both !important;
+    float: none !important;
+    width: 100% !important;
+  }
+
+  form#inbox-filters
+  {
+    clear: both !important;
+    float: none !important;
+    margin-bottom: 1em !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  #main.inbox-show ol.pagination
+  {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  /* ── Typography ─────────────────────────────────────── */
+
+  /* Reduce heading sizes further */
+  h1
+  {
+    font-size: 1.2em;
+  }
+
+  h2
+  {
+    font-size: 1.1em;
+  }
+
+  h3
+  {
+    font-size: 1em;
+  }
+
+  /* Shrink workskin heading font sizes */
+  #workskin h1:not(.landmark),
+  #chapters h1:not(.landmark)
+  {
+    font-size: 1.5em !important;
+    line-height: 1.4 !important;
+  }
+
+  #workskin h2:not(.landmark):not(.title),
+  #chapters h2:not(.landmark):not(.title),
+  #workskin h2.title.heading,
+  #workskin div.preface.group h2.title
+  {
+    font-size: 1.3em !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Workskin h3 — extra line-height for multi-line chapter titles */
+  #workskin h3:not(.landmark),
+  #chapters h3:not(.landmark)
+  {
+    line-height: 1.4 !important;
+  }
+
+  /* ── Cards & comments ───────────────────────────────── */
+
+  /* Tighten blurb card padding */
+  li.work.blurb.group,
+  li.bookmark.blurb.group,
+  li.collection.blurb.group,
+  li.series.blurb.group,
+  li.blurb.group,
+  .work
+  {
+    padding: 0.6em;
+  }
+
+  /* Tighten comment padding */
+  div.comment,
+  li.comment,
+  ol.thread li.comment,
+  li.comment.group
+  {
+    padding: 0.6em;
+  }
+
+  /* Inbox comment items */
+  #inbox-form ol.comment li.comment,
+  ol.comment.index.group li.comment
+  {
+    padding: 0.6em !important;
+  }
+
+  /* Comment icon — don't let it crowd text on small screens */
+  .comment div.icon
+  {
+    margin: 0 0.5em 0.5em 0;
+    padding-top: 0;
+  }
+
+  /* ── Tags & buttons ─────────────────────────────────── */
+
+  /* Smaller tags */
+  a.tag,
+  .tags a
+  {
+    font-size: 0.85em !important;
+    padding: 1px 6px !important;
+  }
+
+  /* Smaller buttons and action links */
+  .actions a,
+  .actions button,
+  .actions input,
+  input[type="submit"],
+  button,
+  .action
+  {
+    font-size: 0.85em !important;
+    padding: .3em .7em !important;
+  }
+
+  /* ── Forms & metadata ───────────────────────────────── */
+
+  /* Reduce dl.meta padding */
+  dl.meta
+  {
+    padding: 0.4em 0.6em;
+  }
+
+  /* System page main */
+  body.sessions-new #main,
+  body.users-new #main,
+  body.static #main,
+  body.skins-new #main,
+  body.skins-edit #main
+  {
+    margin: 0.5em auto !important;
+    padding: 0.75em !important;
+  }
+
+  /* News module cards */
+  div.news.module.group,
+  div.post.group
+  {
+    padding: 0.75em;
+  }
+
+  /* ── Misc ────────────────────────────────────────────── */
+
+  /* Hide custom scrollbar on touch devices (irrelevant) */
+  ::-webkit-scrollbar
+  {
+    width: 0 !important;
+  }
+
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * VERY SMALL — tiny phones (≤ 30em)
+ * ════════════════════════════════════════════════════════
+ */
+
+@media only screen and (max-width: 30em)
+{
+
+  /* ── Typography ─────────────────────────────────────── */
+
+  /* Minimum heading sizes */
+  h1
+  {
+    font-size: 1.1em;
+  }
+
+  h2
+  {
+    font-size: 1em;
+  }
+
+  h3
+  {
+    font-size: 0.95em;
+  }
+
+  /* Workskin fic title — reduce for small screens */
+  #workskin h2.title.heading,
+  #workskin div.preface.group h2.title
+  {
+    font-size: 1.15em !important;
+  }
+
+  /* ── Cards & layout ─────────────────────────────────── */
+
+  /* Maximum tightening on cards */
+  li.work.blurb.group,
+  li.bookmark.blurb.group,
+  li.collection.blurb.group,
+  li.series.blurb.group,
+  li.blurb.group,
+  .work
+  {
+    margin-bottom: 0.75em;
+    padding: 0.5em;
+  }
+
+  /* Work meta block */
+  .work.meta.group
+  {
+    padding: 0.5em;
+  }
+
+  /* Tighten dashboard */
+  div#dashboard,
+  #dashboard,
+  nav#dashboard
+  {
+    padding: 0.5em;
+  }
+
+  /* ── Performance ─────────────────────────────────────── */
+
+  /* Drop box-shadows on very small screens for performance */
+  li.work.blurb.group,
+  li.blurb.group,
+  .work,
+  div.comment,
+  li.comment,
+  .work.meta.group,
+  #kudos,
+  .notice,
+  .caution,
+  .error
+  {
+    box-shadow: none !important;
+  }
+
+}

@@ -1,0 +1,3375 @@
+/*
+ * Theme Name: Pastel Whimsy - AO3 Site Skin (v2 — base-theme port)
+ * Author: intothisshadow
+ * Author URI: https://www.so-obsessed.com
+ * Last Updated: 2026-Apr-16 07:12 GMT
+ *
+ * ==============================================================
+ * LINKS & CREDITS
+ * ==============================================================
+ *
+ * CODE & INSTRUCTIONS:
+ *
+ * - Code (Github):       https://github.com/intothisshadow/AO3-SiteSkin_PastelWhimsy
+ * - Instructions (AO3):  https://archiveofourown.org/works/79008746
+ *
+ * FONTS:
+ * This theme uses 3 custom fonts, that you can install if you so wish.
+ *
+ * - Main font: Lora (https://fonts.google.com/specimen/Lora)
+ * - System font: JetBrains Mono (https://fonts.google.com/specimen/JetBrains+Mono)
+ * - Header font: Playfair Dispkay (https://fonts.google.com/specimen/Playfair+Display)
+ *
+ * CREDITS:
+ *
+ * - Base theme architecture by intothisshadow (Moonlit Wisteria)
+ * https://github.com/intothisshadow/AO3-SiteSkin_MoonlitWisteria
+ *
+ * FIND ME ON:
+ *
+ * - Github:              https://github.com/intothisshadow
+ * - AO3:                 https://archiveofourown.org/users/intothisshadow/
+ * - Website:             https://www.so-obsessed.com
+ *
+ * ==============================================================
+ * TABLE OF CONTENTS
+ * ==============================================================
+ *
+ * 0.  ROOT VARIABLES          ← EDIT THIS TO CHANGE THE PALETTE
+ * 1.  GLOBAL / BODY
+ * 2.  TYPOGRAPHY
+ *   2a. Heading colours
+ *   2b. Body text & userstuff
+ * 3.  LINKS
+ *   3a. Work title & blurb links
+ * 4.  HEADER & NAVIGATION
+ *   4a. Header base (logo hidden)
+ *   4b. Primary nav
+ *   4c. Dropdown menus
+ *   4d. Greeting / user nav
+ *   4e. Search box & button
+ * 5.  SIDEBAR & DASHBOARD
+ *   5a. Dashboard container
+ *   5b. Dashboard links & hover
+ *   5c. Current item
+ *   5d. News page sidebar
+ *   5e. Work filters sidebar
+ * 6.  BUTTONS & ACTIONS
+ *   6a. Base button
+ *   6b. Button hover / focus / active
+ *   6c. Delete & special buttons
+ *   6d. Kudos button
+ * 7.  FORMS & INPUTS
+ *   7a. Input / select / textarea
+ *   7b. Focus states
+ *   7c. Search form
+ *   7d. Fieldset hierarchy
+ *   7e. Autocomplete
+ * 8.  TAG SYSTEM
+ *   8a. Base tag
+ *   8b. Per-category bases
+ *   8c. Per-category hovers
+ *   8d. Fandom / meta tag link hovers
+ * 9.  WORK BLURB CARDS
+ *   9a. Card base & hover
+ *   9b. Stats & metadata
+ * 10. WORK PAGE
+ *   10a. Work meta block & title
+ *   10b. Workskin heading gradients (h1–h6)
+ *   10c. Chapter text
+ *   10d. Work navigation & kudos
+ *   10e. Preface, summary & notes
+ *   10f. Comments & icons
+ *   10g. Inbox (layout fix)
+ * 11. NOTICES & STATE INDICATORS
+ *   11a. Notices, cautions, errors
+ *   11b. State backgrounds (own/draft/unread etc.)
+ * 12. PAGE-SPECIFIC
+ *   12a. Splash / front page (favorites, messages, history modules)
+ *   12b. News page
+ *   12c. Reading history
+ *   12d. Statistics
+ *   12e. System pages (login, skins)
+ *   12f. Index & listbox
+ *   12g. Work, Bookmarks, Tags, People search pages
+ * 13. ACCESSIBILITY & UTILITY
+ *   13a. Skiplinks & landmark hiding
+ *   13b. Symbols key
+ * 14. FOOTER
+ * 15. REPLACE THE AO3 ICONS by zerafinacss
+ *
+ * ==============================================================
+ */
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 0. ROOT VARIABLES — Pastel Whimsy palette
+ * Change ONLY this block to create a new colour scheme.
+ * ════════════════════════════════════════════════════════
+ */
+
+:root
+{
+  --clr-bg: #fff7fb;
+  --clr-card: #f3ecff;
+  --clr-card-nested: #faf7ff;
+  --clr-accent-pale: #efe8fb;
+  --clr-accent-light: #e1d7f2;
+  --clr-accent: #d9cdee;
+  --clr-mid-light: #e1d7f2;
+  --clr-primary: #7b5fa3;
+  --clr-primary-deep: #5e4b8b;
+  --clr-primary-visited: #6b5a94;
+  --clr-cool: #dff2ec;
+  --clr-positive: #3a9a83;
+  --clr-warn: #fdeaf3;
+  --clr-ink: #3f3747;
+  --clr-dark: #4a3f5c;
+  --clr-darkest: #3f2f63;
+  --clr-primary-006: rgba(123, 95, 163, 0.06);
+  --clr-primary-008: rgba(123, 95, 163, 0.08);
+  --clr-primary-018: rgba(123, 95, 163, 0.18);
+  --clr-primary-020: rgba(123, 95, 163, 0.2);
+  --clr-primary-025: rgba(123, 95, 163, 0.25);
+  --clr-accent-020: rgba(217, 205, 238, 0.2);
+  --clr-accent-025: rgba(217, 205, 238, 0.25);
+  --clr-accent-035: rgba(217, 205, 238, 0.35);
+  --clr-mid-light-025: rgba(225, 215, 242, 0.25);
+
+  /* ── Accent colours ──────────────────────────── */
+  --clr-pink: #d44d9b;
+  /* hot pink — h3, gradients, accents */
+  --clr-pink-pale: #f9d6e6;
+  /* soft pink — hr, outlines, pale surfaces */
+  --clr-pink-mid: #f9c8de;
+  /* mid pink — borders, icon outlines */
+  --clr-purple: #b56ad9;
+  /* bright purple — h1, gradients */
+  --clr-blue: #5e8bd4;
+  /* periwinkle — h5, gradients */
+  --clr-cool-pale: #f0faf6;
+  /* pale mint — module backgrounds */
+  --clr-border-inner: #e6dbf5;
+  /* inner fieldset / comment borders */
+  --clr-button-text: #5e3f8c;
+  /* button label colour */
+  --clr-shadow: rgba(90, 60, 130, 0.1);
+  /* standard card shadow */
+  --clr-shadow-sm: rgba(90, 60, 130, 0.08);
+  /* subtle shadow */
+  --clr-shadow-md: rgba(90, 60, 130, 0.15);
+  /* stronger shadow */
+  --clr-purple-glow: rgba(181, 106, 217, 0.4);
+  /* icon border glow */
+
+  /* ── Extended palette ───────────────────────── */
+  --clr-cool-mid: #e6f6f1;
+  /* pale mint — comment bylines, even rows */
+  --clr-lavender: #f6f1ff;
+  /* pale lavender — fieldsets, footer menus */
+  --clr-muted: #5a4a78;
+  /* muted purple — footer text, meta */
+  --clr-deep: #4f347a;
+  /* deep purple — tag hover text */
+  --clr-purple-muted: #8a4fa8;
+  /* muted purple — visited title gradient */
+  --clr-darkest-purple: #4a2a78;
+  /* very deep purple — button hover text */
+  --clr-danger: #6a234a;
+  /* dark maroon — delete buttons, errors */
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 1. GLOBAL / BODY
+ * ════════════════════════════════════════════════════════
+ */
+
+body
+{
+  background: linear-gradient(180deg, var(--clr-bg) 0%, var(--clr-lavender) 100%) fixed !important;
+  background-color: var(--clr-bg) !important;
+  color: var(--clr-ink) !important;
+  overflow-x: hidden;
+  text-align: left;
+}
+
+/* Never justify text anywhere */
+.blurb blockquote,
+.userstuff,
+.summary,
+.notes,
+#workskin,
+#chapters
+{
+  text-align: left !important;
+}
+
+/* Remove AO3's default grey drop shadow around the page wrapper */
+.wrapper
+{
+  box-shadow: none !important;
+}
+
+img,
+video,
+object,
+embed
+{
+  height: auto !important;
+  max-width: 100% !important;
+}
+
+/* Hide AO3's default logo image — replaced via #header .logo content: url() below */
+#header .logo img,
+#header h1 img
+{
+  display: none !important;
+}
+
+iframe
+{
+  max-width: 100% !important;
+}
+
+
+/*
+ * FONT: BODY — Lora serif for comfortable long-form reading.
+ * AO3 resets many UI elements (buttons, inputs, dropdowns) to system fonts.
+ * The extra selectors below re-apply Lora to the ones AO3 overrides.
+ */
+body,
+input,
+textarea,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+blockquote,
+.prompt .blurb h6,
+.bookmark .user .meta,
+a.work,
+span.symbol,
+.heading .actions,
+.heading .action,
+.heading span.actions,
+button,
+span.unread,
+span.replied,
+span.claimed,
+.actions span.defaulted
+{
+  font-family: Lora, "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif, "GNU Unifont";
+}
+
+/* Monospaced elements */
+kbd,
+tt,
+code,
+var,
+pre,
+samp,
+textarea#skin_css,
+.css.module blockquote pre,
+.splash .news .meta,
+.datetime
+{
+  color: #3a2d5c;
+  /* dark purple-grey — intentionally distinct from --clr-ink for code readability */
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+hr
+{
+  border: 0 !important;
+  border-bottom: 3px double var(--clr-accent) !important;
+}
+
+#workskin hr,
+#chapters hr
+{
+  background: linear-gradient(90deg, transparent 0%, var(--clr-pink-pale) 25%, var(--clr-accent) 50%, var(--clr-cool) 75%, transparent 100%) !important;
+  border: none !important;
+  height: 2px !important;
+  margin: 1.2em auto !important;
+  width: 80% !important;
+}
+
+strong,
+b
+{
+  font-weight: bold !important;
+}
+
+em,
+cite,
+i
+{
+  font-style: oblique !important;
+}
+
+::selection
+{
+  background: var(--clr-accent-035) !important;
+  color: var(--clr-dark) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar
+{
+  width: 8px !important;
+}
+
+::-webkit-scrollbar-track
+{
+  background: var(--clr-bg) !important;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: var(--clr-mid-light) !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+  background: var(--clr-primary) !important;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 2. TYPOGRAPHY
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 2a. Heading colours */
+h1,
+h2:not(.title),
+h3,
+h4,
+h5,
+h6,
+.heading:not(.title)
+{
+  font-family: "Playfair Display", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif, "GNU Unifont";
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Per-level heading colours — general site (outside workskin) */
+h1
+{
+  color: var(--clr-purple) !important;
+}
+
+h2:not(.title)
+{
+  color: var(--clr-primary) !important;
+  font-weight: 700 !important;
+}
+
+h3:not(.landmark):not(.byline)
+{
+  color: var(--clr-pink) !important;
+}
+
+h4:not(.landmark)
+{
+  color: var(--clr-positive) !important;
+}
+
+h5:not(.landmark)
+{
+  color: var(--clr-blue) !important;
+}
+
+h6:not(.landmark)
+{
+  color: var(--clr-dark) !important;
+}
+
+/*
+ * h2.title needs Playfair explicitly — the h2:not(.title) rule above
+ * covers general headings but excludes .title, so we set it here.
+ */
+h2.title
+{
+  font-family: "Playfair Display", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif, "GNU Unifont";
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+.splash .module h2,
+.splash .module h3
+{
+  font-weight: 600;
+}
+
+h1
+{
+  font-size: 1.6em;
+}
+
+h2
+{
+  font-size: 1.35em;
+}
+
+h3
+{
+  font-size: 1.2em;
+}
+
+h2.heading:not(.title),
+h3.heading:not(.byline),
+h4.heading
+{
+  border-bottom: 1px solid var(--clr-mid-light) !important;
+  padding-bottom: 4px !important;
+}
+
+/* Landmark headings — collapse visually */
+h3.landmark.heading,
+h4.landmark.heading,
+h5.landmark.heading,
+h6.landmark.heading
+{
+  background: transparent !important;
+  border: none !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+
+
+/* 2b. Body text & userstuff */
+/* User content */
+.userstuff
+{
+  color: var(--clr-ink);
+  line-height: 1.7;
+}
+
+.userstuff a,
+.summary a,
+.notes a
+{
+  color: var(--clr-primary-deep);
+  text-decoration: underline;
+  text-decoration-color: var(--clr-accent);
+  text-underline-offset: 2px;
+}
+
+.summary,
+.notes
+{
+  color: #3a3242;
+  /* slightly darker/cooler than --clr-ink for better legibility in blockquote context */
+}
+
+/*
+ * Summary and notes blockquotes on the work page — pale pink gradient
+ * with left border accent. The long selector list covers all the
+ * different contexts AO3 uses for these elements (chapter preface,
+ * work meta block, standalone preface groups).
+ */
+#chapters .summary blockquote,
+#chapters .notes blockquote,
+#chapters blockquote.userstuff.summary,
+#chapters blockquote.userstuff.notes,
+.chapter.preface.group .summary blockquote,
+.chapter.preface.group .notes blockquote,
+.preface.group .summary.module blockquote,
+.preface.group .notes.module blockquote,
+.work.meta.group blockquote.userstuff.summary,
+.work.meta.group blockquote.userstuff.notes
+{
+  background: linear-gradient(160deg, var(--clr-warn) 0%, #fff 100%);
+  border-left: 3px solid var(--clr-accent);
+  border-radius: 0 8px 8px 0;
+  margin: 0.5em 0;
+  padding: 0.6em 0.9em;
+}
+
+/* Metadata text */
+.meta,
+.stats,
+.datetime,
+.byline
+{
+  color: var(--clr-primary-visited);
+  font-size: .95em;
+}
+
+#workskin h3.byline,
+#workskin .byline.heading
+{
+  margin-bottom: 1.2em !important;
+}
+
+.meta a,
+.stats a,
+.byline a,
+.datetime a
+{
+  color: var(--clr-primary-visited);
+}
+
+/* Metadata definition list */
+dl.meta
+{
+  background: linear-gradient(180deg, var(--clr-card) 0%, var(--clr-bg) 100%);
+  border: 1px dashed var(--clr-accent-light);
+  border-radius: 10px;
+  font-size: 1.02em;
+  padding: .6em .8em;
+}
+
+dl.meta dt
+{
+  color: var(--clr-primary);
+  font-weight: 600;
+}
+
+dl.meta dd
+{
+  color: var(--clr-primary-visited);
+}
+
+/* Pre / code */
+pre,
+code
+{
+  background: var(--clr-accent-pale) !important;
+  border: 1px solid var(--clr-mid-light) !important;
+  border-radius: 4px !important;
+  color: var(--clr-dark) !important;
+  font-size: 0.9em !important;
+}
+
+pre
+{
+  overflow-x: auto !important;
+  padding: 0.75em 1em !important;
+}
+
+code
+{
+  padding: 0.1em 0.3em !important;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 3. LINKS
+ * ════════════════════════════════════════════════════════
+ */
+
+a,
+a:link
+{
+  border-bottom: 2px solid var(--clr-accent-025);
+  color: var(--clr-primary-deep) !important;
+  text-decoration: none;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+
+a:visited
+{
+  border-bottom: 1px dashed var(--clr-accent) !important;
+  color: var(--clr-primary-visited) !important;
+}
+
+a:hover,
+a:focus
+{
+  text-decoration: none;
+}
+
+a:active,
+button:focus
+{
+  outline: 1px dotted var(--clr-primary) !important;
+}
+
+#header a:hover,
+#header a:focus,
+#greeting a:hover,
+#greeting a:focus
+{
+  text-decoration: none !important;
+}
+
+.heading a,
+.heading a:visited,
+h4.heading a,
+h4.heading a:visited
+{
+  color: var(--clr-primary-deep) !important;
+}
+
+a[rel="author"],
+.byline a
+{
+  color: var(--clr-primary-visited) !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+}
+
+/*
+ * Inject "by" prefix before author name on work page and preface.
+ * font-weight/style on the ::before resets to normal so only the
+ * name itself is bold italic, not the "by" word.
+ */
+#workskin a[rel="author"]::before,
+.preface a[rel="author"]::before
+{
+  color: var(--clr-ink);
+  content: "by ";
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+/* 3a. Work title & blurb links */
+/* Work title links */
+.work .header h4 a,
+.index .work h4 a,
+.blurb h4 a
+{
+  background: linear-gradient(135deg, var(--clr-purple) 0%, var(--clr-pink) 50%, var(--clr-blue) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: var(--clr-purple) !important;
+  display: inline !important;
+  font-weight: 600;
+  padding: 0 4px;
+}
+
+.work .header h4 a:visited,
+.index .work h4 a:visited,
+.blurb h4 a:visited
+{
+  background: linear-gradient(135deg, var(--clr-purple-muted) 0%, #a83a74 50%, #4a6fa8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: var(--clr-purple-muted) !important;
+  display: inline !important;
+}
+
+.work .header h4 a:hover,
+.index .work h4 a:hover,
+.blurb h4 a:hover
+{
+  background: linear-gradient(135deg, var(--clr-cool), var(--clr-warn)) !important;
+  -webkit-background-clip: unset !important;
+  /* must unset clip to show bg as highlight, not text gradient */
+  -webkit-text-fill-color: var(--clr-primary) !important;
+  background-clip: unset !important;
+  border-radius: 6px !important;
+  color: var(--clr-primary) !important;
+}
+
+
+/*
+ * Hard reset — header, greeting and dashboard links must never inherit
+ * the button treatment from section 6. Listed exhaustively because
+ * specificity wars with the button rules require explicit overrides.
+ */
+#header a,
+#header a:link,
+#header a:visited,
+#header button,
+#greeting a,
+#greeting a:link,
+#greeting a:visited,
+div#dashboard a,
+div#dashboard a:link,
+div#dashboard a:visited,
+div#dashboard button,
+nav#dashboard a,
+nav#dashboard a:link,
+nav#dashboard a:visited,
+#dashboard a,
+#dashboard a:visited,
+#dashboard a:link,
+#dashboard.admin a,
+#dashboard.admin a:link,
+#dashboard.admin a:visited
+{
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Profile icon — coloured border */
+p.icon img
+{
+  border: 3px solid var(--clr-accent);
+  border-radius: 4px;
+  box-shadow: 0 2px 6px var(--clr-shadow-md);
+  outline: 1px solid var(--clr-pink-pale);
+}
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 4. HEADER & NAVIGATION
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 4a. Header base */
+#header
+{
+  background: linear-gradient(180deg, var(--clr-bg) 0%, var(--clr-card) 100%);
+  box-shadow: 0 6px 14px var(--clr-primary-020);
+}
+
+/* Site title */
+#header h1 a
+{
+  color: var(--clr-pink);
+  font-weight: 700;
+}
+
+#header h1 a span
+{
+  color: var(--clr-pink) !important;
+  font-family: "Playfair Display", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif !important;
+  font-size: 1.2em !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-shadow: 0 0 12px rgba(181, 106, 217, 0.5), 0 1px 3px rgba(212, 77, 155, 0.3) !important;
+}
+
+/*
+ * Replace the default AO3 logo with a higher-quality version.
+ * The img is hidden in section 1; this swaps the content of the
+ * containing .logo element via CSS content replacement.
+ */
+#header .logo
+{
+  content: url("/images/logo.png");
+}
+
+/* Heading links (site name area) */
+#header .heading a
+{
+  color: var(--clr-primary);
+  font-weight: 600;
+}
+
+#header .heading a:hover
+{
+  color: var(--clr-darkest);
+}
+
+/* 4b. Primary nav */
+/* Primary nav bar */
+#header .primary
+{
+  background: linear-gradient(90deg, var(--clr-warn), var(--clr-card), var(--clr-cool));
+  box-shadow: inset 0 -2px 0 var(--clr-primary-020);
+}
+
+#header .primary a
+{
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: var(--clr-ink);
+  font-weight: 500;
+}
+
+#header ul.primary li a
+{
+  color: var(--clr-ink);
+  font-weight: 500;
+}
+
+#header ul.primary li a:hover
+{
+  color: var(--clr-primary);
+}
+
+#header .primary li:hover,
+#header .primary li.open
+{
+  background: transparent;
+}
+
+#header .primary li:hover>a,
+#header .primary li.open>a
+{
+  background: var(--clr-card) !important;
+  border-radius: 12px !important;
+}
+
+/* 4c. Dropdown menus */
+/* Dropdown menus and small login form */
+#header .menu,
+#small_login
+{
+  background: linear-gradient(180deg, var(--clr-warn) 0%, var(--clr-cool) 100%);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px var(--clr-primary-020);
+}
+
+#header .menu li
+{
+  background: linear-gradient(90deg, var(--clr-warn), #f1eaff, var(--clr-cool-mid)) !important;
+  /* #f1eaff = pale lilac, one-off menu stripe */
+  border-bottom: 1px solid var(--clr-accent-light);
+}
+
+#header .menu li:last-child
+{
+  border-bottom: none;
+}
+
+/* Dropdown menu links — plain text, no button treatment */
+#header .dropdown .menu a
+{
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: var(--clr-dark);
+}
+
+#header .dropdown .menu a:hover
+{
+  background: var(--clr-card) !important;
+  border-radius: 10px !important;
+  color: var(--clr-dark) !important;
+}
+
+/* 4d. Greeting / user nav */
+/* User links (username, dashboard etc.) — plain text */
+#header .user a
+{
+  background: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  color: var(--clr-primary);
+  font-weight: 500;
+}
+
+#header .user a:hover
+{
+  background: var(--clr-card) !important;
+  color: var(--clr-darkest) !important;
+}
+
+/* Header subheadings */
+#header h2
+{
+  background: linear-gradient(90deg, var(--clr-card), var(--clr-cool));
+  border-top: 1px solid var(--clr-accent-light);
+  color: var(--clr-dark);
+  text-shadow: none;
+}
+
+/* 4e. Search box & button */
+/* Header search input */
+#header .search input,
+#header .search input[type="text"]
+{
+  background: #fff !important;
+  border: 1px solid var(--clr-accent-light) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  color: var(--clr-dark) !important;
+  padding: .25em .5em !important;
+  width: auto !important;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 5. SIDEBAR & DASHBOARD
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 5a. Dashboard container */
+div#dashboard,
+div#dashboard.own,
+#dashboard,
+#dashboard.admin,
+nav#dashboard
+{
+  background: linear-gradient(180deg, var(--clr-card) 0%, var(--clr-bg) 100%);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 16px;
+  padding: 1em;
+}
+
+div#dashboard h2,
+#dashboard h2,
+div#dashboard h3,
+#dashboard h3
+{
+  color: var(--clr-dark);
+  font-weight: 600;
+}
+
+/* 5b. Dashboard links & hover */
+div#dashboard a,
+div#dashboard a:link,
+div#dashboard a:visited,
+#dashboard a,
+#dashboard a:link,
+#dashboard a:visited
+{
+  border-radius: 10px !important;
+  color: var(--clr-primary) !important;
+  display: block !important;
+  padding: .35em .6em !important;
+}
+
+div#dashboard a:hover,
+.dashboard a:hover,
+#dashboard a:hover,
+nav#dashboard a:hover,
+#dashboard.admin a:hover
+{
+  background: linear-gradient(135deg, #ffe3f1, var(--clr-card), var(--clr-cool)) !important;
+  /* #ffe3f1 = pale rose, one-off hover accent */
+  color: var(--clr-primary) !important;
+}
+
+div#dashboard ul
+{
+  background: linear-gradient(180deg, #fff, var(--clr-card));
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 12px;
+  padding: .6em;
+}
+
+div#dashboard li
+{
+  margin: .2em 0;
+}
+
+/* 5c. Current item */
+div#dashboard .current,
+.dashboard .current,
+div#dashboard li.current a,
+.dashboard li.current a,
+div#dashboard .current a,
+.dashboard .current a,
+nav#dashboard .current,
+nav#dashboard li.current a,
+nav#dashboard .current a,
+#dashboard.admin .current,
+#dashboard.admin li.current a,
+#dashboard.admin .current a
+{
+  background: var(--clr-cool) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  color: var(--clr-ink) !important;
+  font-weight: 600 !important;
+  padding: .35em .6em !important;
+}
+
+/* 5d. News page sidebar */
+
+/* 5e. Work filters sidebar */
+/* Work filters sidebar */
+#work-filters
+{
+  display: block;
+}
+
+#work-filters fieldset,
+#main .filters fieldset
+{
+  background: linear-gradient(180deg, var(--clr-card) 0%, var(--clr-bg) 100%);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 12px;
+  margin-bottom: 1em;
+  padding: .8em;
+}
+
+#work-filters legend,
+#main .filters legend
+{
+  color: var(--clr-dark);
+  font-weight: 600;
+}
+
+#work-filters label,
+#main .filters label
+{
+  color: var(--clr-ink);
+}
+
+#work-filters input,
+#work-filters select,
+#main .filters input,
+#main .filters select
+{
+  width: 100%;
+}
+
+#main .filters,
+#main .filters form,
+#main .filters fieldset
+{
+  display: block !important;
+  height: auto !important;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+/*
+ * Filtered pages (search results, tag browsing) — two-column float layout.
+ * AO3 uses this pattern natively; we replicate it here to ensure our
+ * card styling doesn't break the sidebar/content split.
+ */
+.filtered .index
+{
+  float: left;
+  width: 74%;
+}
+
+.filtered#dashboard
+{
+  float: right;
+  width: 24%;
+}
+
+.filtered:after
+{
+  clear: both;
+  content: "";
+  display: block;
+}
+
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 5d. NEWS PAGE SIDEBAR
+ * ════════════════════════════════════════════════════════
+ */
+/* News page — admin posts */
+div.news.module.group,
+div.post.group
+{
+  background: linear-gradient(160deg, var(--clr-card) 0%, #fff 100%);
+  border-radius: 12px;
+  margin-bottom: 1em;
+  padding: 1em;
+  transition: box-shadow 0.2s ease;
+}
+
+div.news.module.group:hover,
+div.post.group:hover
+{
+  box-shadow: 0 4px 14px var(--clr-primary-018) !important;
+}
+
+div.news.module.group .header h3,
+div.news.module.group .header h4
+{
+  color: var(--clr-primary-deep);
+  font-weight: 600;
+}
+
+div.news.module.group .header h3 a,
+div.news.module.group .header h4 a,
+.latest.news.module .header h4 a,
+.latest.news.module h4.heading a
+{
+  color: var(--clr-primary-deep);
+  font-weight: 600;
+  padding: 0 4px;
+}
+
+div.news.module.group .header h3 a:hover,
+div.news.module.group .header h4 a:hover,
+.latest.news.module .header h4 a:hover,
+.latest.news.module h4.heading a:hover
+{
+  background: linear-gradient(135deg, var(--clr-warn), var(--clr-cool)) !important;
+  border-radius: 6px !important;
+  color: var(--clr-primary) !important;
+  padding: 0 4px !important;
+}
+
+div.news.module.group dl.meta
+{
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* News sidebar — subtle item separators */
+nav#dashboard.admin ul li
+{
+  border-bottom: 1px solid var(--clr-accent-light) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+nav#dashboard.admin ul li:last-child
+{
+  border-bottom: none !important;
+}
+
+nav#dashboard.admin ul li:nth-child(odd) a,
+nav#dashboard.admin ul li:nth-child(odd) a:link,
+nav#dashboard.admin ul li:nth-child(odd) a:visited
+{
+  background: rgba(239, 232, 251, 0.5) !important;
+  border-radius: 6px !important;
+}
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 6. BUTTONS & ACTIONS
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 6a. Base button */
+.actions a,
+.actions a:link,
+.action,
+.action:link,
+.actions button,
+.actions input,
+input[type="submit"],
+button,
+.actions .current,
+.actions label,
+.work .actions a,
+.work .actions button,
+.work .actions input
+{
+  background: linear-gradient(180deg, var(--clr-warn) 0%, var(--clr-cool) 100%) !important;
+  border: 1px solid var(--clr-accent-light) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 10px var(--clr-primary-018) !important;
+  color: var(--clr-button-text) !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  padding: .45em .95em !important;
+  text-decoration: none !important;
+  transition: background .2s, box-shadow .2s, color .2s !important;
+}
+
+/* 6b. Button hover / focus / active */
+.actions a:hover,
+.actions button:hover,
+.actions input:hover,
+.actions a:focus,
+.actions button:focus,
+.actions input:focus,
+.action:hover,
+.action:focus,
+label.action:hover,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+button:hover,
+button:focus,
+.work .actions a:hover,
+.work .actions button:hover,
+.work .actions input:hover,
+#kudos_submit,
+#bookmark_form input[type="submit"],
+#comment_form input[type="submit"]
+{
+  background: linear-gradient(180deg, var(--clr-pink-pale), var(--clr-cool)) !important;
+  box-shadow: 0 5px 12px var(--clr-primary-020) !important;
+  color: var(--clr-darkest-purple) !important;
+}
+
+.actions a:active,
+.actions .current,
+.work .actions a:active,
+.work .actions .current,
+#kudos_submit:active
+{
+  background: var(--clr-accent-light) !important;
+  border-color: var(--clr-accent) !important;
+  box-shadow: inset 0 2px 4px var(--clr-primary-025) !important;
+  color: var(--clr-ink) !important;
+}
+
+span.unread
+{
+  background: linear-gradient(180deg, var(--clr-warn), var(--clr-cool));
+  border-color: var(--clr-accent-light);
+  box-shadow: 0 5px 12px var(--clr-primary-020);
+  color: var(--clr-ink);
+}
+
+/* Secondary action menus */
+.actions .secondary
+{
+  background: linear-gradient(180deg, var(--clr-bg) 0%, var(--clr-card) 100%);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px var(--clr-primary-020);
+}
+
+.actions .secondary a,
+.actions .secondary button
+{
+  background: linear-gradient(180deg, var(--clr-card) 0%, var(--clr-bg) 100%) !important;
+  color: var(--clr-primary) !important;
+}
+
+/* 6c. Delete & special buttons */
+/* Delete buttons */
+.delete a,
+span.delete,
+.actions .delete a,
+.action.delete,
+button.delete,
+input.delete
+{
+  background: linear-gradient(180deg, var(--clr-warn), var(--clr-pink-mid)) !important;
+  border: 1px solid #e7a3c4 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 3px 8px var(--clr-primary-025) !important;
+  color: var(--clr-danger) !important;
+  font-weight: 600 !important;
+}
+
+.actions .delete a:hover,
+.action.delete:hover,
+button.delete:hover,
+input.delete:hover
+{
+  background: linear-gradient(180deg, var(--clr-pink-mid), #f2b1d1) !important;
+  box-shadow: 0 6px 14px rgba(150, 60, 100, .3) !important;
+  color: #4f1736 !important;
+}
+
+/* 6d. Kudos button */
+/* Kudos button disabled state */
+#kudos_submit[disabled],
+#kudos_submit.disabled
+{
+  background: var(--clr-card) !important;
+  border-color: var(--clr-accent-light) !important;
+  box-shadow: none !important;
+  color: var(--clr-primary-visited) !important;
+  opacity: .9 !important;
+}
+
+/* Bookmark form inline display */
+#bookmark_form
+{
+  display: inline-block;
+}
+
+/* Pagination */
+ol.pagination a,
+ol.pagination span.current
+{
+  margin: .25em .15em;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 7. FORMS & INPUTS
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 7a. Input / select / textarea */
+input,
+select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+input[type="tel"]
+{
+  background: #fff;
+  border-color: #d8cfee;
+  box-shadow: none;
+  color: #3f354f;
+}
+
+input::placeholder,
+textarea::placeholder
+{
+  color: #8a7f99;
+}
+
+/* 7b. Focus states */
+/*
+ * General input focus — warm yellow highlight.
+ * Intentionally different from the purple writing textarea focus below,
+ * to visually distinguish search/filter fields from authoring areas.
+ */
+input:focus,
+textarea:focus,
+select:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus
+{
+  background: linear-gradient(135deg, #fff6cc, #fffbe8);
+  border-color: #e6cf7a;
+  box-shadow: 0 0 0 2px rgba(230, 207, 122, .35), inset 0 1px 2px rgba(0, 0, 0, .08);
+  color: var(--clr-ink);
+  outline: none;
+}
+
+/* Main writing textarea — soft purple-white on focus */
+textarea#content:focus,
+textarea#work_summary:focus,
+textarea#work_notes:focus,
+textarea#work_endnotes:focus,
+textarea.mce-editor:focus,
+textarea.large:focus
+{
+  background: linear-gradient(160deg, var(--clr-card-nested), var(--clr-card));
+  border-color: #c9b8e8;
+  box-shadow: 0 0 0 2px rgba(123, 95, 163, .2), inset 0 1px 3px var(--clr-shadow-sm);
+  color: var(--clr-ink);
+  outline: none;
+}
+
+/* 7c. Search form */
+#header .search,
+#header form.search,
+#header form.search fieldset,
+#header form.search p
+{
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#header form.search input[type="submit"],
+#header form.search .actions input[type="submit"]
+{
+  background: linear-gradient(180deg, var(--clr-warn) 0%, var(--clr-cool) 100%) !important;
+  border: 1px solid var(--clr-accent-light) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 10px var(--clr-primary-018) !important;
+  color: var(--clr-button-text) !important;
+  font-weight: 500 !important;
+  padding: .45em .95em !important;
+  width: auto !important;
+}
+
+form.search
+{
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 12px;
+}
+
+.filters
+{
+  background: linear-gradient(180deg, #e9f7f2, #fff);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 12px;
+}
+
+/* 7d. Fieldset hierarchy */
+/*
+ * Card-style fieldsets — outer tier.
+ * Excludes header fieldsets (search form) and inbox fieldsets which
+ * need their own treatment. Three tiers total: outer (card), middle
+ * (transparent structural wrapper), inner (lighter nested card).
+ */
+.listbox,
+fieldset:not(#header fieldset):not(#header *):not(#inbox-form fieldset.comments):not(#inbox-form fieldset.actions),
+form dl,
+dd.hideme,
+.dynamic form
+{
+  background: radial-gradient(circle at top, var(--clr-warn) 0%, var(--clr-lavender) 45%, var(--clr-cool-mid) 100%);
+  border: 1px solid var(--clr-border-inner);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(120, 80, 120, .12);
+}
+
+/*
+ * Middle tier — transparent, no border (structural only).
+ * Only applies to dl directly inside a fieldset that is itself inside
+ * another fieldset or form — not to top-level fieldset > dl.
+ */
+fieldset fieldset dl,
+fieldset.actions,
+fieldset dl fieldset dl
+{
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Inner tier — nested fieldsets and dl dl get a lighter card */
+fieldset fieldset,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+form blockquote.userstuff
+{
+  background: var(--clr-card-nested);
+  border: 1px solid var(--clr-border-inner);
+  border-radius: 10px;
+  box-shadow: inset 0 1px 4px rgba(120, 80, 120, .08);
+}
+
+/* Spacing for deeply nested elements */
+fieldset dd dl,
+form .meta dd,
+fieldset dl fieldset dl,
+dd fieldset
+{
+  margin: 0.643em 0;
+}
+
+/* Search form fieldset — no card styling */
+form.search fieldset
+{
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 7e. Autocomplete */
+/* Autocomplete dropdown */
+.autocomplete .dropdown
+{
+  background: linear-gradient(180deg, var(--clr-card) 0%, var(--clr-bg) 100%) !important;
+  border: 1px solid var(--clr-accent) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 14px var(--clr-primary-025) !important;
+}
+
+.autocomplete .dropdown li:hover,
+.autocomplete .dropdown li.selected
+{
+  background: var(--clr-accent-020) !important;
+  color: var(--clr-ink) !important;
+}
+
+dt.filter-toggle button.expander
+{
+  background: var(--clr-mid-light-025) !important;
+  border: 1px solid var(--clr-mid-light) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  color: var(--clr-ink) !important;
+  padding: 0.15em 0.6em !important;
+}
+
+dt.filter-toggle button.expander:hover
+{
+  background: var(--clr-primary-020) !important;
+  border-color: var(--clr-primary) !important;
+  color: var(--clr-dark) !important;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 8. TAG SYSTEM
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 8a. Base tag */
+/* Base tag styling */
+.tags a
+{
+  background: linear-gradient(135deg, #efe8fb, var(--clr-warn));
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 999px;
+  color: var(--clr-muted);
+  font-weight: 500;
+  padding: 2px 8px;
+}
+
+.tags a:hover,
+dl.meta a.tag:hover
+{
+  background: linear-gradient(135deg, #d9cdf0, #f5c8e0);
+  border-bottom-color: var(--clr-accent-light);
+  border-radius: 6px;
+  color: var(--clr-deep);
+}
+
+/* 8b. Per-category bases */
+/* Fandom tags */
+.fandom .tag,
+.fandoms .tag,
+.work .fandom a.tag,
+.work .fandoms a.tag,
+dl.meta dd.fandom a.tag,
+.tags .fandom a,
+.tags .fandom a:visited
+{
+  background: linear-gradient(135deg, #c9e6d8, #e9f6f0) !important;
+  border: 1px solid #aed6c5 !important;
+  border-radius: 6px !important;
+  color: #2f4f44 !important;
+  padding: .15em .5em !important;
+}
+
+/*
+ * font-size:0 on the container eliminates whitespace gaps between
+ * inline-block tag pills; font size is restored on the child links.
+ */
+.fandoms
+{
+  display: block;
+  font-size: 0;
+  line-height: 1.6;
+}
+
+.fandoms a.tag
+{
+  font-size: 0.95rem;
+  margin-bottom: .35em;
+  margin-right: .35em;
+}
+
+.fandoms a,
+.fandoms a:visited,
+h5.fandoms.heading a,
+h5.fandoms.heading a:visited,
+dl.meta dd.fandom a,
+#main.fandoms-index ul.tags.index.group li a.tag,
+#main.fandoms-index ul.tags.index.group li a.tag:visited,
+#main.media-index ol.index.group li a.tag,
+#main.media-index ol.index.group li a.tag:visited
+{
+  display: inline-block !important;
+  margin-bottom: 0.2em !important;
+}
+
+/* Relationship tags */
+.relationships .tag,
+.work .relationships a.tag,
+dl.meta dd.relationship a.tag,
+.tags .relationships a,
+.tags .relationships a:visited
+{
+  background: linear-gradient(135deg, #cfe6f2, #eaf5fb) !important;
+  border: 1px solid #b6d3e6 !important;
+  border-radius: 6px !important;
+  color: #2f4f63 !important;
+  padding: .15em .5em !important;
+}
+
+/* Character tags */
+.character .tag,
+.characters .tag,
+.work .character a.tag,
+.work .characters a.tag,
+dl.meta dd.character a.tag,
+.tags .characters a,
+.tags .characters a:visited
+{
+  background: linear-gradient(135deg, #f4b6d2, #fde3ef) !important;
+  border: 1px solid #e7a2c3 !important;
+  border-radius: 6px !important;
+  color: #5c1f3f !important;
+  padding: .15em .5em !important;
+}
+
+/* Rating tags */
+.rating .tag,
+.work .rating a.tag,
+dl.meta dd.rating a.tag
+{
+  background: linear-gradient(135deg, #f7e6b5, #fff2cc) !important;
+  border: 1px solid #e6cf8f !important;
+  border-radius: 6px !important;
+  color: #5a4a1f !important;
+  padding: .15em .5em !important;
+}
+
+/* Freeform tags — no border-radius set, inherits 999px pill from base .tags a */
+.freeform .tag,
+.freeforms .tag,
+.work .freeform a.tag,
+.work .freeforms a.tag,
+.tags .freeforms a,
+.tags .freeforms a:visited
+{
+  background: linear-gradient(135deg, #b2cff0, #d6e7f7) !important;
+  border: 1px solid #98b9dc !important;
+  color: #1f324a !important;
+  padding: .15em .5em !important;
+}
+
+/* Warning tags */
+.warnings a.tag,
+.warning a.tag,
+dl.meta dd.warnings a.tag,
+dl.meta dd.warning a.tag,
+.tags .warnings a,
+.tags .warnings a:visited
+{
+  background: linear-gradient(135deg, #d46a9a, #8c6ad4) !important;
+  border: 1px solid #b85a86 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 0 1px var(--clr-primary-025) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  padding: .15em .55em !important;
+}
+
+/* Rating badge */
+.rating
+{
+  color: #4a3f7a;
+}
+
+/* 8c. Per-category hovers */
+/* Per-category tag hovers — darker than base */
+.tags .fandom a:hover,
+.tags .fandom a:visited:hover,
+dl.meta dd.fandom a.tag:hover,
+dl.meta dd.fandom a.tag:visited:hover,
+.work .fandom a.tag:hover,
+.work .fandoms a.tag:hover
+{
+  background: linear-gradient(135deg, #a8d4c0, #c9ede3) !important;
+  border-color: #8bbda8 !important;
+  color: #1e3830 !important;
+}
+
+.tags .relationships a:hover,
+.tags .relationships a:visited:hover,
+dl.meta dd.relationship a.tag:hover,
+dl.meta dd.relationship a.tag:visited:hover,
+.work .relationships a.tag:hover
+{
+  background: linear-gradient(135deg, #aecfe6, #cce8f5) !important;
+  border-color: #8db8d4 !important;
+  color: #1e3548 !important;
+}
+
+.tags .characters a:hover,
+.tags .characters a:visited:hover,
+dl.meta dd.character a.tag:hover,
+dl.meta dd.character a.tag:visited:hover,
+.work .character a.tag:hover,
+.work .characters a.tag:hover
+{
+  background: linear-gradient(135deg, #e890b8, #fac8de) !important;
+  border-color: #d4789f !important;
+  color: #4a1530 !important;
+}
+
+dl.meta dd.rating a.tag:hover,
+dl.meta dd.rating a.tag:hover:visited,
+.work .rating a.tag:hover
+{
+  background: linear-gradient(135deg, #efd090, #ffe4a0) !important;
+  border-color: #d4b060 !important;
+  color: #453510 !important;
+}
+
+.tags .freeforms a:hover,
+.tags .freeforms a:visited:hover,
+.work .freeform a.tag:hover,
+.work .freeforms a.tag:hover
+{
+  background: linear-gradient(135deg, #8ab8e4, #b8d8f0) !important;
+  border-color: #72a4cc !important;
+  color: #142538 !important;
+}
+
+.tags .warnings a:hover,
+.tags .warnings a:visited:hover,
+dl.meta dd.warning a.tag:hover,
+dl.meta dd.warning a.tag:visited:hover,
+.work .warnings a.tag:hover,
+dl.meta dd.warnings a.tag:hover
+{
+  background: linear-gradient(135deg, #be4f84, #7050c0) !important;
+  border-color: #9a3868 !important;
+  color: #fff !important;
+}
+
+/* Base tag hover (unclassified / fallback) */
+.tags a:hover,
+dl.meta a.tag:hover
+{
+  background: linear-gradient(135deg, #d9cdf0, #f5c8e0) !important;
+  border-bottom-color: var(--clr-accent-light) !important;
+  border-radius: 6px !important;
+  color: var(--clr-deep) !important;
+}
+
+/* 8d. Fandom / meta tag link hovers */
+/* Fandom/meta link hover in work blurbs (non-tag links) */
+.work .fandoms a:hover,
+.work .meta a:hover,
+.fandoms a:hover
+{
+  background: linear-gradient(135deg, var(--clr-pink-pale), var(--clr-cool)) !important;
+  border-bottom-color: var(--clr-accent-light) !important;
+  border-radius: 6px !important;
+  color: var(--clr-deep) !important;
+}
+
+/* General work tag hover fallback */
+.work a.tag:hover
+{
+  background: linear-gradient(135deg, #b8a0e0, #d8a8cc) !important;
+  border-color: #a090cc !important;
+  color: #25184a !important;
+}
+
+/* Tag list layout */
+.tags li,
+.tags li::after,
+.tags li.relationships::after,
+.tags li.characters::after,
+.tags li.freeforms::after,
+.tags li.warnings::after
+{
+  content: "";
+  display: inline-block;
+  line-height: 2.0;
+  margin: 0 .25em .3em 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.tags,
+.tags ul
+{
+  overflow: visible;
+  padding: .15em .25em;
+}
+
+a.tag
+{
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* Keep "Show additional tags" / "Show warnings" from breaking mid-phrase */
+.tags li[id$="category_freeforms"] a,
+.tags li[id$="category_warnings"] a
+{
+  white-space: nowrap !important;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 9. WORK BLURB CARDS
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 9a. Card base & hover */
+li.work.blurb.group,
+li.bookmark.blurb.group,
+li.collection.blurb.group,
+li.series.blurb.group,
+li.draft.blurb.group,
+li.reading.blurb.group,
+li.gift.blurb.group,
+li.skins.blurb.group,
+li.blurb.group,
+.work
+{
+  background: linear-gradient(160deg, var(--clr-card) 0%, #fff 100%);
+  border-radius: 12px;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+/*
+ * Only override margin-top — AO3's own rule sets margin-left:65px on
+ * .blurb .header .heading to clear the absolutely-positioned icon block
+ */
+.blurb .header .heading
+{
+  margin-top: 12px;
+}
+
+
+/* 9b. Stats & metadata */
+.blurb dl.stats
+{
+  color: var(--clr-primary-visited) !important;
+}
+
+.blurb dl.stats dt
+{
+  color: var(--clr-ink) !important;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 10. WORK PAGE
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 10a. Work meta block & title */
+/* Work meta block (title, author, fandom, tags) */
+.work.meta.group
+{
+  background: linear-gradient(135deg, var(--clr-bg) 0%, var(--clr-card) 50%, var(--clr-cool-pale) 100%);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px var(--clr-shadow);
+  margin-bottom: 1em;
+  padding: 1em 1.2em;
+}
+
+/* 10b. Workskin heading gradients (h1–h6) */
+/*
+ * Work page h1 — skin pink→teal gradient text.
+ * Gradient text requires background-clip:text + transparent fill.
+ * The plain `color` fallback shows if background-clip is unsupported.
+ */
+#workskin h1:not(.landmark),
+#chapters h1:not(.landmark)
+{
+  background: linear-gradient(135deg, var(--clr-pink-pale) 0%, var(--clr-positive) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  border-bottom: 2px solid rgba(249, 214, 230, 0.6) !important;
+  color: var(--clr-pink) !important;
+  display: inline !important;
+  font-size: 2em !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 0.4em !important;
+  padding-bottom: 0.2em !important;
+}
+
+/* Work page h2 — purple→blue gradient with soft underline */
+#workskin h2:not(.landmark):not(.title),
+#chapters h2:not(.landmark):not(.title)
+{
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-blue) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  border-bottom: 2px solid rgba(213, 180, 240, 0.5) !important;
+  color: var(--clr-primary) !important;
+  display: inline !important;
+  font-size: 1.5em !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 0.35em !important;
+  padding-bottom: 0.25em !important;
+}
+
+/* Work page fic title */
+#main #workskin h2.title.heading,
+#main #workskin div.preface.group h2.title,
+#main #workskin div.preface.group h2.title.heading,
+#workskin h2.title.heading,
+#workskin div.preface.group h2.title,
+#workskin div.preface.group h2.title.heading
+{
+  background: linear-gradient(135deg, var(--clr-purple) 0%, var(--clr-pink) 50%, var(--clr-blue) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  border-bottom: none !important;
+  color: var(--clr-purple) !important;
+  display: inline !important;
+  font-size: 2em !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  text-align: center !important;
+  text-shadow: none !important;
+}
+
+/* Work page h3 — pink→purple gradient with bottom accent */
+#workskin h3:not(.landmark):not(.byline):not(.heading),
+#chapters h3:not(.landmark):not(.byline):not(.heading)
+{
+  background: linear-gradient(135deg, var(--clr-pink) 0%, var(--clr-purple) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  border-bottom: 2px solid rgba(212, 77, 155, 0.35) !important;
+  border-left: none !important;
+  color: var(--clr-pink) !important;
+  display: inline !important;
+  font-size: 1.2em !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 0.3em !important;
+  padding-bottom: 0.2em !important;
+}
+
+/* Summary/Notes headings — pink colour, no left border */
+#workskin div.preface .summary h3,
+#workskin div.preface .notes h3,
+#chapters .summary h3,
+#chapters .notes h3
+{
+  -webkit-text-fill-color: var(--clr-pink) !important;
+  color: var(--clr-pink) !important;
+}
+
+/* Work page h4 — teal→purple gradient */
+#workskin h4:not(.landmark),
+#chapters h4:not(.landmark)
+{
+  background: linear-gradient(135deg, var(--clr-positive) 0%, var(--clr-primary) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  border-bottom: 1px solid rgba(58, 154, 131, 0.3) !important;
+  color: var(--clr-positive) !important;
+  display: inline !important;
+  font-size: 1.1em !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 0.3em !important;
+  padding-bottom: 0.2em !important;
+}
+
+/* Work page h5 — blue→pink gradient */
+#workskin h5:not(.landmark),
+#chapters h5:not(.landmark)
+{
+  background: linear-gradient(135deg, var(--clr-blue) 0%, var(--clr-pink) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  border-bottom: 1px solid rgba(94, 139, 212, 0.4) !important;
+  color: var(--clr-blue) !important;
+  display: inline !important;
+  font-size: 1em !important;
+  font-style: italic !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 0.25em !important;
+}
+
+/* Work page h6 — dark purple→indigo gradient */
+#workskin h6:not(.landmark),
+#chapters h6:not(.landmark)
+{
+  background: linear-gradient(135deg, var(--clr-dark) 0%, #3a4a8a 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  border-bottom: 1px solid rgba(74, 63, 92, 0.35) !important;
+  color: var(--clr-dark) !important;
+  display: inline !important;
+  font-size: 0.95em !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 0.2em !important;
+  padding-bottom: 0.15em !important;
+}
+
+/* add "by" before author */
+.work .byline
+{
+  color: var(--clr-primary-visited);
+}
+
+/* 10c. Chapter text */
+/* Chapter body text */
+#chapters .userstuff
+{
+  line-height: 1.7;
+}
+
+/* Chapter preface (summary, notes) */
+#chapters .chapter.preface.group
+{
+  background: linear-gradient(160deg, var(--clr-card) 0%, #fff 100%);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 12px;
+  margin-bottom: 1em;
+  padding: 0.75em 1em;
+}
+
+/* Kudos section */
+#kudos
+{
+  background: linear-gradient(135deg, var(--clr-warn), var(--clr-cool));
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 12px;
+  margin-top: 1em;
+  padding: 0.75em 1em;
+}
+
+/* 10d. Work navigation & kudos */
+/* Work navigation (prev/next chapter) — spacing above the nav row */
+ul.work.navigation.actions
+{
+  margin-bottom: 1em;
+}
+
+/* Clear workskin background so chapter content shows on the page background */
+#workskin
+{
+  background: none;
+}
+
+/*
+ * Clear background on work navigation and the download dropdown — both
+ * would otherwise inherit the button gradient from section 6.
+ */
+.work.navigation
+{
+  background: none !important;
+}
+
+.work.navigation .download,
+.javascript .work.navigation .download .secondary
+{
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 10e. Preface, summary & notes */
+/*
+ * Preface block — centre the fic title and author byline.
+ * Inner content (paragraphs, blockquotes etc.) is re-lefted below
+ * so only the heading itself is centred, not the summary text.
+ */
+#workskin div.preface,
+#workskin .preface.group
+{
+  text-align: center !important;
+}
+
+#workskin div.preface p,
+#workskin div.preface blockquote,
+#workskin div.preface dl,
+#workskin div.preface ul,
+#workskin div.preface .summary h3,
+#workskin div.preface .notes h3,
+#workskin div.preface .module h3
+{
+  text-align: left !important;
+}
+
+/* 10f. Comments & icons */
+/* Comments */
+div.comment,
+li.comment,
+ol.thread li.comment,
+li.comment.group
+{
+  background: var(--clr-card-nested);
+  border: 1px solid var(--clr-border-inner);
+  border-radius: 14px;
+  box-shadow: 0 6px 14px var(--clr-shadow);
+  overflow: visible;
+  padding: .85em;
+  position: relative;
+  text-align: start;
+}
+
+.comment h4.byline
+{
+  background: var(--clr-cool-mid);
+  border-bottom: 2px solid #9fd8c8;
+  border-radius: 10px 10px 0 0;
+  color: #3f7f6b;
+  padding: .4em .6em;
+}
+
+.thread .even
+{
+  background: #eef8f4;
+  border-radius: 12px;
+  margin: 0;
+}
+
+/*
+ * Comment user icon — floated left with negative top margin to pull it
+ * up into the byline strip, creating the overlapping avatar effect.
+ */
+.comment div.icon
+{
+  border-bottom: 5px solid var(--clr-pink-mid);
+  float: left;
+  margin: -1.5625em 0.5625em 0.5625em 0;
+  padding-top: 2em;
+}
+
+.comment div.icon img,
+.comment div.icon a img
+{
+  border: 3px solid var(--clr-purple);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px var(--clr-purple-glow);
+  box-sizing: border-box;
+  outline: 2px solid var(--clr-pink-pale);
+  outline-offset: 1px;
+}
+
+.primary .icon img,
+.primary .icon
+{
+  border: 3px solid var(--clr-purple) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px var(--clr-purple-glow) !important;
+  box-sizing: border-box !important;
+}
+
+p.icon img
+{
+  border: 3px solid var(--clr-purple);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px var(--clr-purple-glow);
+  outline: 2px solid var(--clr-pink-pale);
+  outline-offset: 1px;
+}
+
+p.icon a,
+#greeting p.icon a,
+.primary.header.module p.icon a,
+#main p.icon a
+{
+  background: linear-gradient(135deg, var(--clr-card), var(--clr-cool-mid)) !important;
+  border: 2px solid var(--clr-accent-light) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 6px var(--clr-shadow-md) !important;
+  display: inline-block !important;
+  line-height: 0 !important;
+  padding: 2px !important;
+}
+
+/* 10g. Inbox (layout fix) */
+/*
+ * Inbox fieldsets — strip card styling inherited from section 7.
+ * The inbox comment list and its actions fieldset must be transparent
+ * containers; the card treatment is applied per-item below.
+ */
+#inbox-form fieldset.comments,
+#inbox-form ol.comment.index.group
+{
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  position: static !important;
+}
+
+#inbox-form fieldset.actions
+{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 1em !important;
+  padding: 0.5em 0 !important;
+  position: static !important;
+}
+
+/*
+ * Inbox layout — #main.inbox-show lacks the .filtered class so AO3's
+ * float rules don't apply. Override .dashboard > form { width:100% }
+ * and restore side-by-side layout manually.
+ */
+#main.inbox-show ol.pagination
+{
+  float: left !important;
+  width: 75% !important;
+}
+
+form#inbox-form
+{
+  clear: none !important;
+  float: left !important;
+  width: 75% !important;
+}
+
+form#inbox-filters
+{
+  clear: none !important;
+  float: right !important;
+  margin: 0 !important;
+  max-width: 24% !important;
+  min-width: 0 !important;
+  position: relative !important;
+  right: auto !important;
+  top: auto !important;
+  width: 24% !important;
+}
+
+/* Inbox comment items — blurb style */
+#inbox-form ol.comment li.comment,
+ol.comment.index.group li.comment
+{
+  background: linear-gradient(160deg, var(--clr-card) 0%, #fff 100%) !important;
+  border: 1px solid var(--clr-accent-light) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px var(--clr-shadow-sm) !important;
+  margin-bottom: .75em !important;
+  padding: .85em !important;
+}
+
+#inbox-form ol.comment li.comment.unread
+{
+  background: linear-gradient(160deg, var(--clr-warn) 0%, var(--clr-bg) 100%) !important;
+  border-color: var(--clr-pink-mid) !important;
+}
+
+/* Inbox byline */
+#inbox-form li.comment h4.byline,
+ol.comment.index.group li.comment h4.byline
+{
+  background: linear-gradient(135deg, var(--clr-card) 0%, var(--clr-cool-pale) 100%) !important;
+  border-bottom: 2px solid var(--clr-accent-light) !important;
+  border-radius: 8px 8px 0 0 !important;
+  color: var(--clr-primary-deep) !important;
+  font-size: .95em !important;
+  margin: -.85em -.85em .75em -.85em !important;
+  padding: .5em .85em !important;
+}
+
+/* Inbox unread/replied badges */
+#inbox-form span.unread
+{
+  background: linear-gradient(135deg, var(--clr-pink), var(--clr-purple)) !important;
+  border-radius: 999px !important;
+  color: #fff !important;
+  font-size: .8em !important;
+  padding: .15em .6em !important;
+}
+
+#inbox-form span.replied
+{
+  color: var(--clr-positive) !important;
+  font-size: 1em !important;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 11. NOTICES & STATE INDICATORS
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 11a. Notices, cautions, errors */
+/* Notices & alerts */
+.notice,
+p.notice,
+.flash.notice
+{
+  background: linear-gradient(135deg, var(--clr-card), var(--clr-cool-mid));
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--clr-shadow);
+  color: #3a2d6b;
+  /* deep blue-purple — slightly cooler than --clr-darkest for notice contrast */
+  font-weight: 500;
+  padding: 0.6em 1em;
+}
+
+.caution,
+p.caution,
+.flash.caution
+{
+  background: linear-gradient(135deg, var(--clr-warn), var(--clr-lavender));
+  border: 1px solid var(--clr-border-inner);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--clr-shadow);
+  color: var(--clr-ink);
+  padding: 0.6em 1em;
+}
+
+.error,
+p.error,
+.flash.error
+{
+  background: linear-gradient(135deg, var(--clr-warn), var(--clr-card-nested));
+  border: 1px solid #e6a3c4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(150, 60, 100, .15);
+  color: var(--clr-danger);
+  padding: 0.6em 1em;
+}
+
+.required
+{
+  color: var(--clr-pink);
+}
+
+
+/* 11b. State backgrounds */
+/*
+ * State indicators — own, draft, unread, child, unwrangled, unreviewed.
+ * .own is excluded from blurb/work/bookmark li elements because those
+ * already have card styling; the tint is only useful on page wrappers.
+ */
+.own:not(.blurb):not(li.work):not(li.bookmark):not(#dashboard):not([id="dashboard"])
+{
+  background: linear-gradient(135deg, var(--clr-cool-pale), var(--clr-cool-mid)) !important;
+  opacity: 0.97;
+}
+
+.draft,
+.draft .wrapper
+{
+  background: linear-gradient(135deg, var(--clr-card), #ede4fb) !important;
+  opacity: 0.95;
+}
+
+.unread
+{
+  background: linear-gradient(135deg, var(--clr-warn), var(--clr-pink-pale)) !important;
+  opacity: 0.97;
+}
+
+.child
+{
+  background: linear-gradient(135deg, #f0f4ff, #e8eefb) !important;
+  opacity: 0.97;
+}
+
+.unwrangled
+{
+  background: linear-gradient(135deg, #fff7e6, #fef0d0) !important;
+  opacity: 0.95;
+}
+
+.unreviewed
+{
+  background: linear-gradient(135deg, var(--clr-warn), var(--clr-card)) !important;
+  opacity: 0.95;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 12. PAGE-SPECIFIC
+ * ════════════════════════════════════════════════════════
+ */
+
+/* 12a. Splash / front page */
+
+/* Reading history highlight */
+.reading h4.viewed
+{
+  background: var(--clr-cool);
+}
+
+.reading h4.viewed span,
+.reading h4.viewed
+{
+  color: #5a5070 !important;
+  font-size: 0.85em !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+}
+
+/* Splash page — Is it later already? (reading history) module */
+.random.readings.module
+{
+  background: linear-gradient(160deg, var(--clr-cool-pale) 0%, #fff 100%);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px var(--clr-shadow);
+  box-sizing: border-box;
+  padding: 1em 1.2em;
+}
+
+/* Splash page — Unread messages module */
+.latest.messages.module
+{
+  background: linear-gradient(160deg, var(--clr-card) 0%, #fff 100%);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px var(--clr-shadow);
+  box-sizing: border-box;
+  padding: 1em 1.2em;
+}
+
+.latest.messages.module ul.abbreviated.comment
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.latest.messages.module li.comment
+{
+  background: linear-gradient(160deg, var(--clr-warn) 0%, var(--clr-bg) 100%);
+  border: 1px solid var(--clr-pink-mid);
+  border-radius: 10px;
+  margin-bottom: .5em;
+  padding: .6em .8em;
+}
+
+.latest.messages.module h4.byline
+{
+  background: linear-gradient(135deg, var(--clr-card) 0%, var(--clr-cool-pale) 100%);
+  border-bottom: 2px solid var(--clr-accent-light);
+  border-radius: 6px 6px 0 0;
+  color: var(--clr-primary-deep);
+  font-size: .9em;
+  margin: -.6em -.8em .6em -.8em;
+  padding: .4em .8em;
+}
+
+/* Splash page — Find Your Favorites module */
+.splash .favorite
+{
+  background: linear-gradient(135deg, var(--clr-card) 0%, var(--clr-warn) 50%, var(--clr-cool-pale) 100%);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px var(--clr-shadow);
+  box-sizing: border-box;
+  padding: 1em 1.2em;
+}
+
+.splash .favorite h3.heading
+{
+  color: var(--clr-purple) !important;
+  font-style: italic !important;
+  letter-spacing: 0.03em !important;
+  text-shadow: 0 0 10px rgba(181, 106, 217, 0.3) !important;
+}
+
+/*
+ * News section on splash — reset all card styling. It uses a plain list
+ * layout and its own post cards, so the module card would double-wrap it.
+ */
+.splash .news
+{
+  background: none !important;
+  border: none !important;
+  border-radius: none !important;
+  box-shadow: none !important;
+}
+
+/* Splash modules */
+
+.splash .favorite ul,
+.splash .favorite ol
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.splash .favorite li
+{
+  display: inline-block;
+  margin: 0.2em 0.3em 0.2em 0;
+}
+
+.splash .favorite li a
+{
+  border-radius: 999px !important;
+  font-weight: 500 !important;
+  padding: .2em .7em !important;
+}
+
+.splash .favorite li:nth-of-type(2n+1) a
+{
+  background: linear-gradient(135deg, var(--clr-purple), var(--clr-pink)) !important;
+  border: 1px solid var(--clr-purple) !important;
+  border-radius: 999px !important;
+  color: #fff !important;
+}
+
+.splash .favorite li:nth-of-type(2n+2) a
+{
+  background: linear-gradient(135deg, var(--clr-positive), var(--clr-blue)) !important;
+  border: 1px solid var(--clr-positive) !important;
+  border-radius: 999px !important;
+  color: #fff !important;
+}
+
+.splash .favorite li:nth-of-type(2n+1) a:hover,
+.splash .favorite li:nth-of-type(2n+2) a:hover
+{
+  background: linear-gradient(135deg, var(--clr-warn), var(--clr-cool)) !important;
+  border: 1px solid var(--clr-accent) !important;
+  border-radius: 999px !important;
+  color: var(--clr-darkest-purple) !important;
+}
+
+/* Splash modules */
+
+/* 12b. News page */
+
+/* 12c. Reading history */
+/* Reading history — no additional overrides needed */
+
+
+
+/* 12d. Statistics */
+/* Stats */
+.stats
+{
+  color: var(--clr-primary-visited) !important;
+}
+
+.stats dt
+{
+  color: var(--clr-ink) !important;
+}
+
+/* Statistics page alternating rows */
+.statistics .index li:nth-of-type(even)
+{
+  background: linear-gradient(135deg, var(--clr-card), var(--clr-cool-pale)) !important;
+  border-radius: 6px !important;
+}
+
+.statistics .index li:nth-of-type(odd)
+{
+  background: linear-gradient(135deg, var(--clr-bg), var(--clr-card-nested)) !important;
+  border-radius: 6px !important;
+}
+
+
+/* 12e. System pages */
+/* System pages (login, skins, etc.) */
+body.sessions-new #main,
+body.users-new #main,
+body.static #main,
+body.skins-new #main,
+body.skins-edit #main
+{
+  background: linear-gradient(160deg, var(--clr-card) 0%, var(--clr-accent-pale) 100%) !important;
+  border: 1px solid var(--clr-mid-light) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 14px var(--clr-primary-008) !important;
+  margin: 1em auto !important;
+  padding: 1.5em 2em !important;
+}
+
+
+/* 12f. Index & listbox */
+/* Index pages */
+.index.group
+{
+  background: linear-gradient(160deg, var(--clr-card) 0%, var(--clr-card-nested) 100%) !important;
+  border: 1px solid var(--clr-mid-light) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 10px var(--clr-primary-006) !important;
+  margin-bottom: 1em !important;
+  padding: 0.75em 1em !important;
+}
+
+/*
+ * Skins index outer list — reset card styling so individual items show as blurbs.
+ * The generic .index.group rule above would card-style the whole list.
+ */
+ul.skin.index.group,
+ul.skins.index.group
+{
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+.listbox .index,
+.listbox ol.index,
+.listbox ul.index
+{
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+ol.alphabet,
+ol.index.alphabet
+{
+  background: var(--clr-accent-pale) !important;
+  border: 1px solid var(--clr-mid-light) !important;
+  border-radius: 8px !important;
+  margin-bottom: 1em !important;
+  padding: 0.5em !important;
+}
+
+/* 12g. Work, Bookmarks, Tags, People search pages */
+#main.works-search form.verbose.search,
+#main.bookmarks-search form.search,
+#main.tags-search form.search,
+#main.people-search form.search
+{
+  background: linear-gradient(160deg, var(--clr-card) 0%, var(--clr-card-nested) 100%) !important;
+  border: 1px solid var(--clr-mid-light) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 10px var(--clr-primary-006) !important;
+  margin-bottom: 1em !important;
+  margin-top: 3em;
+  padding: 0.75em 1em !important;
+}
+
+
+#main.works-search form.verbose.search fieldset
+{
+  background: radial-gradient(circle at top, var(--clr-warn) 0%, var(--clr-lavender) 45%, var(--clr-cool-mid) 100%) !important;
+  border: 1px solid var(--clr-border-inner) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 16px rgba(120, 80, 120, .12) !important;
+  margin-bottom: 1.5em !important;
+  padding: 1em 1.25em !important;
+}
+
+#main.works-search form.verbose.search legend
+{
+  color: var(--clr-primary) !important;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-size: 1.1em !important;
+  font-weight: 700 !important;
+  padding: 0 0.5em !important;
+}
+
+#main.works-search form.verbose.search dt
+{
+  color: var(--clr-primary) !important;
+  font-weight: 600 !important;
+  margin-top: 0.75em !important;
+}
+
+#main.works-search form.verbose.search dd
+{
+  margin-left: 0 !important;
+  margin-top: 0.25em !important;
+}
+
+#main.works-search form.verbose.search input[type="text"],
+#main.works-search form.verbose.search select
+{
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+#main.works-search p.submit
+{
+  margin: 1em 0 !important;
+  text-align: center !important;
+}
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 13. ACCESSIBILITY & UTILITY
+ * ════════════════════════════════════════════════════════
+ */
+/* Userstuff h3 border — override AO3 default dark double border */
+.userstuff h3
+{
+  border-bottom: 0.25em double var(--clr-accent) !important;
+}
+
+/* 13a. Skiplinks & landmark hiding */
+/*
+ * Skiplinks and landmark headings — visually hidden but kept in the DOM
+ * for screen readers. font-size:0 + height:0 collapses them without
+ * using display:none which would remove them from the accessibility tree.
+ */
+ul#skiplinks,
+.landmark,
+.landmark a,
+.index .heading.landmark
+{
+  color: transparent !important;
+  font-size: 0 !important;
+  height: 0 !important;
+  line-height: 0 !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+}
+
+/* 13b. Symbols key */
+/*
+ * Content symbols key sizing — collapses the <img> to 0×0 and uses
+ * padding to restore the hit area, allowing background-image icon
+ * replacement to work correctly at the right dimensions.
+ */
+#symbols-key dl img,
+#bookmark-symbols-key img
+{
+  height: 0 !important;
+  padding: 25px 0 0 25px;
+  width: 0 !important;
+}
+
+.bookmark p.status a>span,
+#symbols-key dl img,
+#bookmark-symbols-key img
+{
+  background-origin: border-box;
+  background-size: cover;
+  border: 1px solid;
+  box-sizing: border-box;
+}
+
+
+
+/*
+ * ════════════════════════════════════════════════════════
+ * 14. FOOTER
+ * ════════════════════════════════════════════════════════
+ */
+
+#footer
+{
+  background: linear-gradient(180deg, #ede6f7 0%, var(--clr-bg) 100%) !important;
+  /* #ede6f7 = pale purple-grey, one-off footer top tint */
+  border-top: 1px solid var(--clr-accent-light) !important;
+  padding: 1em !important;
+}
+
+#footer,
+#footer *
+{
+  color: var(--clr-muted) !important;
+}
+
+#footer a,
+#footer a:link,
+#footer a:visited
+{
+  border-bottom: none !important;
+  color: var(--clr-muted) !important;
+}
+
+#footer a:hover
+{
+  color: var(--clr-primary) !important;
+  text-decoration: underline !important;
+}
+
+#footer .menu
+{
+  background: linear-gradient(180deg, var(--clr-lavender) 0%, var(--clr-bg) 100%);
+  border: 1px solid #dccfee;
+  /* slightly deeper than --clr-accent-light for footer context */
+  border-radius: 12px;
+  padding: .75em 1em;
+}
+
+#footer .menu .heading
+{
+  color: #4b3f5c !important;
+  /* close to --clr-dark, slightly warmer for footer heading */
+  font-weight: 600 !important;
+  margin-bottom: .4em !important;
+}
+
+/*
+ * Footer links and buttons — strip all button styling inherited from
+ * section 6 so they render as plain text links.
+ */
+#footer a,
+#footer button,
+#footer input[type="submit"]
+{
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/*
+ * ============================================================
+ * 15. REPLACE THE AO3 ICONS - default color scheme
+ * by zerafinacss https://github.com/ZerafinaCSS/Replace-the-AO3-Icons-2.0
+ * ============================================================
+ */
+
+ul.required-tags,
+.bookmark .status span,
+.blurb .icon
+{
+  opacity: 1 !important;
+  /* some public site skins like Reversi set the opacity of some icons to 0.9, which I want to prevent here */
+}
+
+/* ========== ICONS FOR USERS, COLLECTIONS, TAGS etc. ========== */
+/* have to use "content" instead of "background" to replace some of these icons, as they were coded differently in the default archive skin */
+
+/* default user icon */
+img[src$="/images/skins/iconsets/default/icon_user.png"]
+{
+  background:
+    #7b5fa3
+    /* theme: primary purple */
+    content-box;
+  border: 1.5px solid #e1d7f2;
+  /* change border width and color here */
+  box-sizing: border-box;
+  content: url("https://zerafinacss.github.io/ao3/icons/user-default-01.png");
+  /* url of new icon */
+}
+
+/* anon comment icon */
+.comment .icon .anonymous
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/anon-01.png"),
+    /* url of new icon */
+    #7b5fa3
+    /* theme: primary purple */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid rgba(123, 95, 163, 0.15);
+  /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/* guest comment icon */
+.comment .icon .visitor
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/user-visitor-01.png"),
+    /* url of new icon */
+    #7b5fa3
+    /* theme: primary purple */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid rgba(123, 95, 163, 0.15);
+  /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/* default collection icon */
+img[src$="/images/skins/iconsets/default/icon_collection.png"]
+{
+  background:
+    linear-gradient(transparent, #ffffff50 45% 55%, transparent),
+    /* subtle gradient */
+    #5e8bd4
+    /* theme: blue */
+    border-box;
+  border: 1.5px solid rgba(123, 95, 163, 0.15);
+  /* change border width and color here */
+  box-sizing: border-box;
+  content: url("https://zerafinacss.github.io/ao3/icons/collection-01.png");
+  /* url of new icon */
+}
+
+/* tag icons */
+.tagset .primary .icon,
+.tag .primary .icon,
+.index .tagset .icon
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/tag-01.png"),
+    /* url of new icon */
+    linear-gradient(transparent, #ffffff50 45% 55%, transparent),
+    /* subtle gradient */
+    #d44d9b
+    /* theme: pink */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid rgba(123, 95, 163, 0.15);
+  /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/* icon for unrevealed works */
+.index .mystery .icon
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/anon-01.png"),
+    /* url of new icon */
+    linear-gradient(transparent, #ffffff50 45% 55%, transparent)
+    /* subtle gradient */
+    #5e8bd4
+    /* theme: blue */
+    content-box;
+  background-size: cover;
+  border: 1.5px solid #e1d7f2;
+  /* change width and color of outer border here */
+  box-shadow: inset 0 0 0 3px #f6f1ff;
+  /* change width and color of inner border here */
+  box-sizing: border-box;
+}
+
+/* admin icon => seen on news posts */
+.admin .primary .icon
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/admin-01.png")
+    /* url of new icon */
+    no-repeat,
+    linear-gradient(#ffffff40, transparent)
+    /* subtle gradient */
+    #d44d9b
+    /* theme: pink */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid rgba(123, 95, 163, 0.4);
+  /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/* default icon for skins */
+.skins .primary .icon:not(:has(a .icon)),
+.index .skins .icon:not(:has(a .icon))
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/skins-01.png"),
+    /* url of new icon */
+    #d44d9b
+    /* theme: pink */
+    border-box;
+  background-size: cover;
+  border: 1.5px solid #e1d7f2;
+  /* change border width and color here */
+  box-sizing: border-box;
+}
+
+/* >========== CONTENT SYMBOLS ==========< */
+
+/* sets the size of the symbols keys icons */
+#symbols-key dl img,
+#bookmark-symbols-key img
+{
+  height: 0 !important;
+  padding: 25px 0 0 25px;
+  width: 0 !important;
+}
+
+/* sizing and borders for content symbols */
+.blurb ul.required-tags li a>span,
+.bookmark p.status a>span,
+#symbols-key dl img,
+#bookmark-symbols-key img
+{
+  background-origin: border-box;
+  background-size: cover;
+  border: 1px solid;
+  /* change border width here or delete this if you don't want the borders */
+  box-sizing: border-box;
+}
+
+/* empty symbols boxes (no rating, category or warning) */
+.required-tags .rating-notrated,
+.required-tags .category-none,
+.required-tags .warning-no,
+.status .count,
+img[src$="/images/skins/iconsets/default/rating-notrated.png"],
+img[src$="/images/skins/iconsets/default/category-none.png"],
+img[src$="/images/skins/iconsets/default/warning-no.png"]
+{
+  background: #f6f1ff;
+  /* theme: lavender */
+  color: rgba(123, 95, 163, 0.25);
+  /* theme: accent alpha */
+}
+
+/*
+ * The following content symbols have transparent borders, allowing the background to show through.
+ * This automatically gives the icons borders that have a slightly darker color than the background color.
+ * You can replace the border color with any other rgb, rgba, or hex color, transparent or not.
+ */
+
+/* >>========== Rating ==========<< */
+
+/* General Audiences */
+.required-tags .rating-general-audience,
+img[src$="/images/skins/iconsets/default/rating-general-audience.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-gen-01.png"),
+    /* url of new icon */
+    #3a9a83;
+  /* theme: teal */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* Teen And Up Audiences */
+.required-tags .rating-teen,
+img[src$="/images/skins/iconsets/default/rating-teen.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-teen-01.png"),
+    /* url of new icon */
+    #c9a84c;
+  /* theme: warm gold */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* Mature */
+.required-tags .rating-mature,
+img[src$="/images/skins/iconsets/default/rating-mature.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-mature-01.png"),
+    /* url of new icon */
+    #b56ad9;
+  /* theme: purple */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* Explicit */
+.required-tags .rating-explicit,
+img[src$="/images/skins/iconsets/default/rating-explicit.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-explicit-01.png"),
+    /* url of new icon */
+    #d44d9b;
+  /* theme: pink */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* >>========== Relationships, pairings, orientations ==========<< */
+
+/* F/F */
+.required-tags .category-femslash,
+img[src$="/images/skins/iconsets/default/category-femslash.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-ff-01.png"),
+    /* url of new icon */
+    #d44d9b;
+  /* theme: pink */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* F/M */
+.required-tags .category-het,
+img[src$="/images/skins/iconsets/default/category-het.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-mf-01.png"),
+    /* url of new icon */
+    #b56ad9;
+  /* theme: purple */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* Gen */
+.required-tags .category-gen,
+img[src$="/images/skins/iconsets/default/category-gen.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-gen-01.png"),
+    /* url of new icon */
+    #3a9a83;
+  /* theme: teal */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* M/M */
+.required-tags .category-slash,
+img[src$="/images/skins/iconsets/default/category-slash.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-mm-01.png"),
+    /* url of new icon */
+    #5e8bd4;
+  /* theme: blue */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* Multi */
+.required-tags .category-multi,
+img[src$="/images/skins/iconsets/default/category-multi.png"]
+{
+  background:
+    conic-gradient(from 270deg, #3a9a83 25%, #b56ad9 25% 50%, #5e8bd4 50% 75%, #d44d9b 75%);
+  /* conic gradient with the colors of the relationship icons */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* Other relationships */
+.required-tags .category-other,
+img[src$="/images/skins/iconsets/default/category-other.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-other-01.png"),
+    /* url of new icon */
+    #4f347a;
+  /* theme: deep */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* >>========== Content warnings ==========<< */
+
+/* Author chose not to warn */
+.required-tags .warning-choosenotto,
+img[src$="/images/skins/iconsets/default/warning-choosenotto.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/warning-choosenotto-01.png"),
+    /* url of new icon */
+    #b56ad9;
+  /* theme: purple */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* Warnings apply */
+.required-tags .warning-yes,
+img[src$="/images/skins/iconsets/default/warning-yes.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/warning-yes-01.png"),
+    /* url of new icon */
+    #d44d9b;
+  /* theme: pink */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* External work */
+.required-tags .external-work,
+img[src$="/images/skins/iconsets/default/warning-external-work.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/warning-external-work-01.png"),
+    /* url of new icon */
+    #5e8bd4;
+  /* theme: blue */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* >>========== Completion status ==========<< */
+
+/* uncomplete/unfulfilled */
+.required-tags .complete-no,
+img[src$="/images/skins/iconsets/default/complete-no.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/complete-no-01.png"),
+    /* url of new icon */
+    #d44d9b;
+  /* theme: pink */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* completed/filled */
+.required-tags .complete-yes,
+img[src$="/images/skins/iconsets/default/complete-yes.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/complete-yes-01.png"),
+    /* url of new icon */
+    #3a9a83;
+  /* theme: teal */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* >>========== Bookmark symbols ==========<< */
+
+/* Rec bookmark */
+.status .rec,
+img[src$="/images/skins/iconsets/default/bookmark-rec.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-rec-01.png"),
+    /* url of new icon */
+    #5e8bd4;
+  /* theme: blue */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* Public bookmark */
+.status .public,
+img[src$="/images/skins/iconsets/default/bookmark-public.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-public-01.png"),
+    /* url of new icon */
+    #5e8bd4;
+  /* theme: blue */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* Private bookmark */
+.status .private,
+img[src$="/images/skins/iconsets/default/bookmark-private.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-locked-01.png"),
+    /* url of new icon */
+    #4f347a;
+  /* theme: deep */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+  font-size: 0;
+}
+
+/* fix private bookmark */
+.status .private .text
+{
+  background: none;
+  /*
+   * This seems to be the only bookmark icon where the background is put in the .text element instead of it's parent.
+   * I want it to match the rest, so I'm hiding the background of the .text element.
+   */
+}
+
+/* Hidden bookmark */
+.status .hidden,
+img[src$="/images/skins/iconsets/default/bookmark-hidden.png"]
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-locked-01.png"),
+    /* url of new icon */
+    #d44d9b;
+  /* theme: pink */
+  color: rgba(123, 95, 163, 0.12);
+  /* theme: accent alpha */
+}
+
+/* >========== RSS ICON ==========< */
+
+/* hide old rss icon */
+a.rss span
+{
+  background: none;
+  padding: 0;
+}
+
+/* setup for the new rss icon */
+.actions li a.rss
+{
+  align-content: center;
+  align-items: center;
+  column-gap: 0.3em;
+  display: inline-flex;
+}
+
+/* new rss icon */
+.actions li a.rss::before
+{
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rss-01.png")
+    /* url of new icon */
+    #b56ad9;
+  /* theme: purple */
+  background-size: cover;
+  border: 1px solid #e1d7f2;
+  border-radius: 2px;
+  box-sizing: border-box;
+  content: "";
+  height: 0.85em;
+  width: 0.85em;
+}
+
+/* >========== KUDOS ICON ==========< */
+
+/* hide old kudos icon */
+p.kudos
+{
+  background: none;
+}
+
+/* new kudos icon */
+div:has(> p.kudos)::before
+{
+  background: url("https://zerafinacss.github.io/ao3/icons/kudos-01.png");
+  /* url of new icon */
+  background-size: cover;
+  content: "";
+  filter: invert(42%) sepia(60%) saturate(800%) hue-rotate(280deg) brightness(90%) contrast(90%);
+  /* adjust filter values to change color */
+  height: 55px;
+  position: absolute;
+  width: 55px;
+}
+
+
+/*
+ * ============================================
+ * MOBILE FILTER PANEL FIX
+ * Overrides the always-visible filter rules on mobile so the
+ * JS-powered slide-in panel can hide and show correctly.
+ * ============================================
+ */
+
+@media only screen and (max-width: 62em)
+{
+
+  /* Override the forced-visible rules so position:fixed can hide the panel */
+  #main .filters,
+  #main .filters form,
+  #main .filters fieldset
+  {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    visibility: visible !important;
+  }
+
+  /* Hide the filter form off-screen by default */
+  .javascript #main .filters
+  {
+    bottom: 0 !important;
+    height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    position: fixed !important;
+    right: -100vw !important;
+    top: 0 !important;
+    width: 16em !important;
+    z-index: 400 !important;
+  }
+
+  /* Slide in when open */
+  .javascript .filtering #main .filters
+  {
+    right: 0 !important;
+  }
+
+}
