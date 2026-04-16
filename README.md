@@ -15,18 +15,18 @@ A soft, pastel-themed site skin for [Archive of Our Own](https://archiveofourown
 <p align="center">
   <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_desktop1.jpg" width="48%" alt="Front page 1" />
   &nbsp;
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/desktop_desktop_screenshot2.jpg" width="48%" alt="Front page 2" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_desktop2.jpg" width="48%" alt="Front page 2" />
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/desktop_screenshot3.jpg" width="48%" alt="Recent" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_desktopt3.jpg" width="48%" alt="Recent" />
   &nbsp;
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/desktop_screenshot4.jpg" width="48%" alt="Search" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_desktop4.jpg" width="48%" alt="Search" />
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/desktop_screenshot5.jpg" width="48%" alt="User's Works" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_desktop5.jpg" width="48%" alt="User's Works" />
   &nbsp;
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/desktop_screenshot6.jpg" width="48%" alt="Work Page" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_desktop6.jpg" width="48%" alt="Work Page" />
 </p>
 
 
@@ -36,19 +36,19 @@ A soft, pastel-themed site skin for [Archive of Our Own](https://archiveofourown
 <details>
 <summary>Mobile</summary>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/mobile_screenshot1.jpg" width="30%" alt="Front page" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_mobile1.jpg" width="30%" alt="Front page" />
   &nbsp;
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/mobile_screenshot2.jpg" width="30%" alt="User's Work Page" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_mobile2.jpg" width="30%" alt="User's Work Page" />
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/headsraw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/mobile_screenshot3.jpg" width="30%" alt="Recent" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/main/screenshots/screenshot_mobile3.jpg" width="30%" alt="Recent" />
   &nbsp;
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/headsraw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/mobile_screenshot4.jpg" width="30%" alt="Front Page 2" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_mobile4.jpg" width="30%" alt="Front Page 2" />
 </p>
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/headsraw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/mobile_screenshot5.jpg" width="30%" alt="Work page" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_mobile5.jpg" width="30%" alt="Work page" />
 </p>
 
 
