@@ -2,7 +2,7 @@
  * Theme Name: Pastel Whimsy — Mobile Add-on
  * Author: intothisshadow
  * Author URI: https://www.so-obsessed.com
- * Last Updated: 2026-Apr-16 07:12 GMT
+ * Last Updated: 2026-Apr-16 08:42 GMT
  * ============================================
  * HOW TO USE:
  * 1. Make a site skin with style.css and set Media to "all". Save.
@@ -27,6 +27,50 @@
  * SHARED — applies at all mobile widths (≤ 62em)
  * ════════════════════════════════════════════════════════
  */
+
+/*
+ * ============================================
+ * MOBILE FILTER PANEL FIX
+ * Overrides the always-visible filter rules on mobile so the
+ * JS-powered slide-in panel can hide and show correctly.
+ * ============================================
+ */
+
+@media only screen and (max-width: 62em)
+{
+
+  /* Override the forced-visible rules so position:fixed can hide the panel */
+  #main .filters,
+  #main .filters form,
+  #main .filters fieldset
+  {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    visibility: visible !important;
+  }
+
+  /* Hide the filter form off-screen by default */
+  .javascript #main .filters
+  {
+    bottom: 0 !important;
+    height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    position: fixed !important;
+    right: -100vw !important;
+    top: 0 !important;
+    width: 16em !important;
+    z-index: 400 !important;
+  }
+
+  /* Slide in when open */
+  .javascript .filtering #main .filters
+  {
+    right: 0 !important;
+  }
+
+}
 
 @media only screen and (max-width: 62em)
 {
