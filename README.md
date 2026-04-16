@@ -41,7 +41,7 @@ A soft, pastel-themed site skin for [Archive of Our Own](https://archiveofourown
   <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_mobile2.jpg" width="30%" alt="User's Work Page" />
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/head/main/screenshots/screenshot_mobile3.jpg" width="30%" alt="Recent" />
+  <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_mobile3.jpg" width="30%" alt="Recent" />
   &nbsp;
   <img src="https://raw.githubusercontent.com/intothisshadow/AO3-SiteSkin_PastelWhimsy/refs/heads/main/screenshots/screenshot_mobile4.jpg" width="30%" alt="Front Page 2" />
 </p>
