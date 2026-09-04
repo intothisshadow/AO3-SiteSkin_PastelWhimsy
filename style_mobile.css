@@ -2,7 +2,7 @@
  * Theme Name: Pastel Whimsy — Mobile Add-on
  * Author: intothisshadow
  * Author URI: https://www.so-obsessed.com
- * Last Updated: 2026-Apr-16 08:42 GMT
+ * Last Updated: 2026-Sept-04 14:41 GMT
  * ============================================
  * HOW TO USE:
  * 1. Make a site skin with style.css and set Media to "all". Save.
@@ -104,6 +104,26 @@
     box-sizing: border-box !important;
     padding-left: 3.5% !important;
     padding-right: 3.5% !important;
+    width: 100% !important;
+  }
+
+  /*
+ * Reset filtered two-column layout (index + Sort/Filter dashboard) to a
+ * stacked full-width layout for the whole tablet/phone range. Without this,
+ * the desktop 74%/24% float (style_desktop.css) stays active between this
+ * breakpoint and the ≤42em phone reset below, squeezing the filter sidebar
+ * into a ~24%-wide column that collides with the position:fixed slide-panel
+ * fix above and gets pushed out of layout on tablets (e.g. iPad).
+ */
+  .filtered .index
+  {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .filtered#dashboard
+  {
+    float: none !important;
     width: 100% !important;
   }
 
@@ -495,21 +515,8 @@
 
   /* ── Layout ──────────────────────────────────────────── */
 
-  /*
- * Reset filtered two-column layout to full width —
- * our desktop .filtered rules override AO3's own narrow reset
- */
-  .filtered .index
-  {
-    float: none !important;
-    width: 100% !important;
-  }
-
-  .filtered#dashboard
-  {
-    float: none !important;
-    width: 100% !important;
-  }
+  /* Note: .filtered .index / .filtered#dashboard stacking is now handled
+     in the ≤62em block above, covering tablets as well as phones. */
 
   /* Stack inbox layout vertically */
   form#inbox-form
